@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -10,7 +11,8 @@ const Home = () => {
       alignItems: 'center',
       justifyContent: 'center',
       textAlign: 'center',
-      padding: '2rem'
+      padding: '2rem',
+      paddingTop: '80px'
     }}>
       <div>
         <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>
@@ -19,7 +21,7 @@ const Home = () => {
         <p style={{ fontSize: '1.5rem', marginBottom: '2rem' }}>
           Experience the cradle of humanity, ancient civilizations, and breathtaking landscapes
         </p>
-        <button style={{
+        <Link to="/tours" style={{
           background: '#ffd700',
           color: '#1e3c72',
           padding: '1rem 2rem',
@@ -27,10 +29,11 @@ const Home = () => {
           borderRadius: '25px',
           fontSize: '1.1rem',
           fontWeight: 'bold',
-          cursor: 'pointer'
+          cursor: 'pointer',
+          textDecoration: 'none'
         }}>
           Explore Tours
-        </button>
+        </Link>
       </div>
     </div>
   );
