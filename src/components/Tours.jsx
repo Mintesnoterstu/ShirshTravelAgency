@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { FaClock, FaUsers, FaStar, FaMapMarkerAlt, FaCalendarAlt, FaCheck } from 'react-icons/fa';
+import { FaClock, FaUsers, FaStar, FaCheck } from 'react-icons/fa';
 
 const ToursSection = styled.section`
   padding: 5rem 2rem;
@@ -209,8 +209,10 @@ const Tours = () => {
     {
       id: 1,
       title: "Classic Northern Ethiopia",
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "Explore the historical treasures of Northern Ethiopia including Lalibela, Gondar, and Aksum.",
+      image:
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      description:
+        "Explore the historical treasures of Northern Ethiopia including Lalibela, Gondar, and Aksum.",
       duration: "10 days",
       groupSize: "2-12 people",
       price: "$1,200",
@@ -222,14 +224,16 @@ const Tours = () => {
         "Gondar Castles",
         "Aksum Obelisks",
         "Local guide included",
-        "All meals provided"
-      ]
+        "All meals provided",
+      ],
     },
     {
       id: 2,
       title: "Simien Mountains Trek",
-      image: "https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "Trek through the stunning Simien Mountains and encounter unique wildlife.",
+      image:
+        "https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      description:
+        "Trek through the stunning Simien Mountains and encounter unique wildlife.",
       duration: "7 days",
       groupSize: "4-8 people",
       price: "$850",
@@ -241,14 +245,15 @@ const Tours = () => {
         "Mountain trekking",
         "Camping experience",
         "Professional guide",
-        "Equipment provided"
-      ]
+        "Equipment provided",
+      ],
     },
     {
       id: 3,
       title: "Danakil Depression Adventure",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "Experience the otherworldly landscapes of the Danakil Depression.",
+      image: "https://waltainfo.com/wp-content/uploads/2023/10/Dal9ol.webp",
+      description:
+        "Experience the otherworldly landscapes of the Danakil Depression.",
       duration: "4 days",
       groupSize: "6-15 people",
       price: "$650",
@@ -260,14 +265,16 @@ const Tours = () => {
         "Salt flats",
         "Active volcanoes",
         "4x4 transportation",
-        "Safety equipment"
-      ]
+        "Safety equipment",
+      ],
     },
     {
       id: 4,
       title: "Ethiopian Coffee Tour",
-      image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "Discover the birthplace of coffee and learn about traditional coffee ceremonies.",
+      image:
+        "https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      description:
+        "Discover the birthplace of coffee and learn about traditional coffee ceremonies.",
       duration: "5 days",
       groupSize: "2-10 people",
       price: "$480",
@@ -279,9 +286,9 @@ const Tours = () => {
         "Traditional ceremonies",
         "Local villages",
         "Coffee tasting",
-        "Cultural immersion"
-      ]
-    }
+        "Cultural immersion",
+      ],
+    },
   ];
 
   const filteredTours = activeFilter === 'all' 

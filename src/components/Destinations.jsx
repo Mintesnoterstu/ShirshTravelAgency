@@ -153,75 +153,87 @@ const Destinations = () => {
     {
       id: 1,
       title: "Lalibela Rock Churches",
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "A UNESCO World Heritage site featuring 11 medieval monolithic cave churches carved from rock, representing one of the world's most remarkable architectural achievements.",
+      image:
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      description:
+        "A UNESCO World Heritage site featuring 11 medieval monolithic cave churches carved from rock, representing one of the world's most remarkable architectural achievements.",
       location: "Amhara Region",
       bestTime: "October to May",
       duration: "3-5 days",
       price: "$450",
       rating: 4.9,
-      visitors: "2.5k+"
+      visitors: "2.5k+",
     },
     {
       id: 2,
       title: "Simien Mountains",
-      image: "https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "Home to dramatic landscapes and unique wildlife including the Gelada baboon and Walia ibex. Experience breathtaking trekking routes and stunning vistas.",
+      image:
+        "https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      description:
+        "Home to dramatic landscapes and unique wildlife including the Gelada baboon and Walia ibex. Experience breathtaking trekking routes and stunning vistas.",
       location: "Northern Ethiopia",
       bestTime: "September to April",
       duration: "4-7 days",
       price: "$680",
       rating: 4.8,
-      visitors: "1.8k+"
+      visitors: "1.8k+",
     },
     {
       id: 3,
       title: "Aksum",
-      image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "Ancient city known for its tall obelisks and historical significance as the heart of ancient Ethiopia. Explore archaeological wonders and royal tombs.",
+      image:
+        "https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      description:
+        "Ancient city known for its tall obelisks and historical significance as the heart of ancient Ethiopia. Explore archaeological wonders and royal tombs.",
       location: "Tigray Region",
       bestTime: "November to March",
       duration: "2-3 days",
       price: "$320",
       rating: 4.7,
-      visitors: "1.2k+"
+      visitors: "1.2k+",
     },
     {
       id: 4,
       title: "Danakil Depression",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "One of the hottest places on Earth, featuring colorful sulfur springs, salt flats, and active volcanoes. A truly otherworldly experience.",
+      image:
+        "./images/originals.jpg",
+      description:
+        "One of the hottest places on Earth, featuring colorful sulfur springs, salt flats, and active volcanoes. A truly otherworldly experience.",
       location: "Afar Region",
       bestTime: "November to March",
       duration: "3-4 days",
       price: "$550",
       rating: 4.6,
-      visitors: "900+"
+      visitors: "900+",
     },
     {
       id: 5,
       title: "Gondar Castles",
-      image: "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "Known as the 'Camelot of Africa', featuring medieval castles and palaces that showcase Ethiopia's royal heritage and architectural splendor.",
+      image:
+        "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      description:
+        "Known as the 'Camelot of Africa', featuring medieval castles and palaces that showcase Ethiopia's royal heritage and architectural splendor.",
       location: "Amhara Region",
       bestTime: "October to May",
       duration: "2-3 days",
       price: "$280",
       rating: 4.5,
-      visitors: "1.5k+"
+      visitors: "1.5k+",
     },
     {
       id: 6,
       title: "Bale Mountains",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      description: "Home to the rare Ethiopian wolf and stunning alpine scenery. Perfect for wildlife viewing and high-altitude trekking adventures.",
+      image:
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      description:
+        "Home to the rare Ethiopian wolf and stunning alpine scenery. Perfect for wildlife viewing and high-altitude trekking adventures.",
       location: "Oromia Region",
       bestTime: "November to April",
       duration: "4-6 days",
       price: "$420",
       rating: 4.4,
-      visitors: "800+"
-    }
+      visitors: "800+",
+    },
   ];
 
   return (

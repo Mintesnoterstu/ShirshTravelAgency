@@ -9,43 +9,50 @@ const ToursPage = () => {
     {
       id: 1,
       title: "Historic Northern Ethiopia",
-      description: "Explore the ancient churches of Lalibela, the castles of Gondar, and the monasteries of Lake Tana.",
+      description:
+        "Explore the ancient churches of Lalibela, the castles of Gondar, and the monasteries of Lake Tana.",
       duration: "7 days",
       price: "$1,200",
-      image: "https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image:
+        "https://assets.vogue.com/photos/5ac2ae2a022a720bbd098ef1/master/w_1920,c_limit/00-story-image-lalibela-ethiopia-is-the-next-machu-picchu.jpg",
       rating: 4.8,
-      type: "popular"
+      type: "popular",
     },
     {
       id: 2,
       title: "Southern Ethiopia Cultural Tour",
-      description: "Discover the diverse cultures of the Omo Valley, home to unique tribes and traditions.",
+      description:
+        "Discover the diverse cultures of the Omo Valley, home to unique tribes and traditions.",
       duration: "10 days",
       price: "$1,800",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       rating: 4.9,
-      type: "new"
+      type: "new",
     },
     {
       id: 3,
       title: "Addis Ababa City Tour",
-      description: "Experience the vibrant capital city with its museums, markets, and cultural sites.",
+      description:
+        "Experience the vibrant capital city with its museums, markets, and cultural sites.",
       duration: "1 day",
       price: "$150",
-      image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image:
+        "https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       rating: 4.5,
-      type: "standard"
+      type: "standard",
     },
     {
       id: 4,
       title: "Danakil Depression Adventure",
-      description: "Journey to one of the hottest places on Earth with its colorful sulfur springs and salt flats.",
+      description:
+        "Journey to one of the hottest places on Earth with its colorful sulfur springs and salt flats.",
       duration: "5 days",
       price: "$900",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image: "https://waltainfo.com/wp-content/uploads/2023/10/Dal9ol.webp",
       rating: 4.7,
-      type: "adventure"
-    }
+      type: "adventure",
+    },
   ];
 
   const filteredTours = tours.filter(tour => {
