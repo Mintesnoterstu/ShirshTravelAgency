@@ -63,7 +63,7 @@ const destinations = [
   },
   {
     name: 'National Museum of Ethiopia (Addis Ababa)',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Lucy_Ethiopia_Museum.JPG', // Lucy replica display, Creative Commons
+    image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/b9/09/c9/national-museum.jpg?w=2000&h=-1&s=1', // TripAdvisor image
     short: 'Home of "Lucy". Royal regalia, ancient relics, ethnographic treasures.',
     full: `Highlights:\n\n- Lucy Gallery: Home to "Lucy" (3.2 million-year-old hominid skeleton)\n- Royal Regalia: Coronation artifacts of Emperor Haile Selassie\n- Relic Collection: Ancient Axumite and medieval church treasures\n- Ethnographic Display: Traditional crafts from all Ethiopian regions\n\nVisitor Info:\n📍 Location: King George VI Street, Addis Ababa\n⏰ Hours: 8:30AM-5:30PM daily\n💰 Entrance: ~200 ETB (foreign adults)\n\nTip: Combine your visit with nearby attractions like Merkato market and Holy Trinity Cathedral. The museum is a must for history lovers and school groups!`
   },
