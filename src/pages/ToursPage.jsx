@@ -69,7 +69,7 @@ const destinations = [
   },
   {
     name: 'Abuna Yemata Guh (Tigray)',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/2/2e/Abuna_Yemata_Guh_Church%2C_Tigray%2C_Ethiopia_%282%29.jpg', // CC-licensed exterior photo
+    image: 'https://images.westend61.de/0001440020pw/priest-holding-the-hand-cross-on-rocks-outside-abuna-yemata-guh-church-gheralta-mountains-tigray-region-ethiopia-africa-RHPLF17382.jpg', // Westend61 image
     short: 'Cliff church. 6th-century. Epic climb, ancient frescoes, Gheralta views.',
     full: `The Most Dramatic Cliff Church in Ethiopia\n\nCarved into a sheer sandstone cliff at 2,580m altitude, this 6th-century church is only accessible by a vertical climb (with hand/foot holds) and a narrow ledge.\n\nHighlights:\n- Breathtaking 360° views of the Gheralta mountains\n- Pristine frescoes from the 9th–15th centuries (including the Nine Saints)\n- Intact ancient manuscripts sealed in leather covers\n- A holy cave where the founding priest, Abuna Yemata, is said to have prayed\n\nUnique Experience:\nPilgrims and visitors must remove shoes before the final ascent, following a tradition dating back 1,500 years.\n\nBest Time to Visit: October–March (cooler weather for climbing)\n\nPhysical Difficulty: ⚠️ Requires 1.5-hour hike and 20m rock scramble (no technical climbing)\n\nLocal Guide Tip:\nStart at dawn to avoid heat – the climb takes 2–3 hours round trip. Elderly visitors can view the church from the base with binoculars.\n\nWhy Visit?\n- Bucket-list adventure + spirituality\n- Exclusive: Few agencies promote Tigray's cliff churches\n- UNESCO potential: Part of Tigray's proposed "Gheralta Rock Churches" World Heritage nomination.`
   },
