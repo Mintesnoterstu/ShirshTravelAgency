@@ -1,242 +1,165 @@
 import React, { useState } from 'react';
 
+const destinations = [
+  {
+    name: 'Lalibela - The Rock-Hewn Churches',
+    image: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTvZtzSi574OeohYzn_4OKA3H4zqFy_Y6xLfbmBHKVYoJYIhEmhe3reVb78D13KgUtlFvOQp0vUHU7a8hq4QMBYMZnSfdUwb94gBJeZnrY',
+    short: '11 medieval churches carved from rock. UNESCO World Heritage Site.',
+    full: `Home to 11 medieval monolithic churches carved out of rock in the 12th century. A UNESCO World Heritage Site and important pilgrimage site for Ethiopian Orthodox Christians. The churches are still active, with priests chanting in ancient Ge'ez. Lalibela is often called the "New Jerusalem" and is a marvel of engineering and devotion.`
+  },
+  {
+    name: 'Simien Mountains National Park',
+    image: 'https://simienpark.org/wp-content/uploads/2017/10/simien-landscape-small.jpg',
+    short: 'Dramatic cliffs, deep valleys, rare wildlife. UNESCO site.',
+    full: `Often called "Africa's Grand Canyon," this UNESCO site features dramatic cliffs, deep valleys, and rare wildlife like the Gelada baboon and Ethiopian wolf. The park is a trekker's paradise, with breathtaking views and unique flora and fauna found nowhere else on earth.`
+  },
+  {
+    name: 'Danakil Depression',
+    image: 'https://waltainfo.com/wp-content/uploads/2023/10/Dal9ol.webp',
+    short: "Earth's hottest, lowest place. Volcanoes, sulfur springs, salt flats.",
+    full: `One of Earth's hottest and lowest places, featuring active volcanoes, colorful sulfur springs, and salt flats where Afar people still practice traditional salt mining. The Danakil is a surreal, otherworldly landscape, and a true adventure for intrepid travelers.`
+  },
+  {
+    name: 'Axum - Ancient Kingdom',
+    image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/6f/b2/15/from-the-early-4th-century.jpg?w=2000&h=-1&s=1',
+    short: 'Heart of ancient Ethiopia. Obelisks, tombs, Ark of the Covenant legend.',
+    full: `The heart of ancient Ethiopian civilization with towering obelisks, royal tombs, and the legendary Church of St. Mary of Zion (said to house the Ark of the Covenant). Axum was once the capital of a powerful empire trading with Rome and Persia.`
+  },
+  {
+    name: 'Gondar - The Camelot of Africa',
+    image: 'https://as1.ftcdn.net/v2/jpg/04/81/01/08/1000_F_481010899_hDF8kx3A0TY0alVcbtSszeA8T5msbgaN.jpg',
+    short: '17th-century castles and palaces. Fasil Ghebbi, Debre Berhan Selassie.',
+    full: `Features 17th-century castles and palaces from the Gondarine dynasty, including Fasil Ghebbi (a UNESCO site) and the famous Debre Berhan Selassie church with its angel-covered ceiling. Gondar is known for its Timkat festival and royal history.`
+  },
+  {
+    name: 'Omo Valley - Cultural Mosaic',
+    image: 'https://images.ctfassets.net/27l0lnvdn7un/6xgRuCaom50bqAhPQNMS9q/c1d7e1240090e34e7797d4d9715f16f5/20231109_091304.jpg?fm=webp&w=3840&q=75',
+    short: 'Home to many indigenous tribes. Unique cultures and ceremonies.',
+    full: `Home to numerous indigenous tribes like the Mursi, Hamer, and Karo, known for their unique body painting, lip plates, and traditional ceremonies. The Omo Valley is a living museum of Africa's cultural diversity.`
+  },
+  {
+    name: 'Bale Mountains National Park',
+    image: 'https://www.shadowsofafrica.com/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/s/h/shutterstock_1950133336.jpg',
+    short: 'Afro-alpine meadows, cloud forests, Ethiopian wolves.',
+    full: `High-altitude wilderness with Afro-alpine meadows, cloud forests, and the largest population of Ethiopian wolves. Excellent for trekking, horseback riding, and wildlife viewing. The Harenna Forest is a biodiversity hotspot.`
+  },
+  {
+    name: 'Harar - Walled City',
+    image: 'https://www.ethiosports.com/wp-content/uploads/2015/07/Harar-Wall.jpg',
+    short: 'Ancient walled city. 82 mosques, hyena feeding tradition.',
+    full: `A UNESCO-listed ancient walled city with 82 mosques, colorful markets, and unique tradition of wild hyena feeding at night. Harar is considered the fourth holiest city in Islam and is famous for its vibrant alleyways and coffee culture.`
+  },
+  {
+    name: 'Blue Nile Falls (Tis Issat)',
+    image: 'https://sabisatour.com/wp-content/uploads/2022/12/Blue_Nile_Falls-2-960x636.jpg',
+    short: 'Dramatic falls on the Blue Nile. Best in rainy season.',
+    full: `Known as "The Smoking Water," these dramatic falls on the Blue Nile are most impressive during the rainy season (June-September). The surrounding area is lush and green, perfect for hiking and birdwatching.`
+  },
+  {
+    name: 'Tiya Megaliths',
+    image: 'https://www.ancient-origins.net/sites/default/files/styles/article_image/public/field/image/Tiya-Stones-monoliths-Ethiopia.jpg?itok=7ahIWyXR',
+    short: 'UNESCO site. Mysterious ancient stelae with carvings.',
+    full: `A UNESCO site featuring mysterious ancient stelae (standing stones) with carvings, dating back to the 12th-14th centuries. The Tiya stones mark ancient burial grounds and are one of Ethiopia's most enigmatic archaeological sites.`
+  },
+  {
+    name: 'National Museum of Ethiopia (Addis Ababa)',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Lucy_Ethiopia_Museum.JPG', // Lucy replica display, Creative Commons
+    short: 'Home of "Lucy". Royal regalia, ancient relics, ethnographic treasures.',
+    full: `Highlights:\n\n- Lucy Gallery: Home to "Lucy" (3.2 million-year-old hominid skeleton)\n- Royal Regalia: Coronation artifacts of Emperor Haile Selassie\n- Relic Collection: Ancient Axumite and medieval church treasures\n- Ethnographic Display: Traditional crafts from all Ethiopian regions\n\nVisitor Info:\n📍 Location: King George VI Street, Addis Ababa\n⏰ Hours: 8:30AM-5:30PM daily\n💰 Entrance: ~200 ETB (foreign adults)\n\nTip: Combine your visit with nearby attractions like Merkato market and Holy Trinity Cathedral. The museum is a must for history lovers and school groups!`
+  },
+  {
+    name: 'Abuna Yemata Guh (Tigray)',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/2/2e/Abuna_Yemata_Guh_Church%2C_Tigray%2C_Ethiopia_%282%29.jpg', // CC-licensed exterior photo
+    short: 'Cliff church. 6th-century. Epic climb, ancient frescoes, Gheralta views.',
+    full: `The Most Dramatic Cliff Church in Ethiopia\n\nCarved into a sheer sandstone cliff at 2,580m altitude, this 6th-century church is only accessible by a vertical climb (with hand/foot holds) and a narrow ledge.\n\nHighlights:\n- Breathtaking 360° views of the Gheralta mountains\n- Pristine frescoes from the 9th–15th centuries (including the Nine Saints)\n- Intact ancient manuscripts sealed in leather covers\n- A holy cave where the founding priest, Abuna Yemata, is said to have prayed\n\nUnique Experience:\nPilgrims and visitors must remove shoes before the final ascent, following a tradition dating back 1,500 years.\n\nBest Time to Visit: October–March (cooler weather for climbing)\n\nPhysical Difficulty: ⚠️ Requires 1.5-hour hike and 20m rock scramble (no technical climbing)\n\nLocal Guide Tip:\nStart at dawn to avoid heat – the climb takes 2–3 hours round trip. Elderly visitors can view the church from the base with binoculars.\n\nWhy Visit?\n- Bucket-list adventure + spirituality\n- Exclusive: Few agencies promote Tigray's cliff churches\n- UNESCO potential: Part of Tigray's proposed "Gheralta Rock Churches" World Heritage nomination.`
+  },
+];
+
 const ToursPage = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedDuration, setSelectedDuration] = useState('');
-  const [selectedPrice, setSelectedPrice] = useState('');
-
-  const tours = [
-    {
-      id: 1,
-      title: "Historic Northern Ethiopia",
-      description:
-        "Explore the ancient churches of Lalibela, the castles of Gondar, and the monasteries of Lake Tana.",
-      duration: "7 days",
-      price: "$1,200",
-      image:
-        "https://assets.vogue.com/photos/5ac2ae2a022a720bbd098ef1/master/w_1920,c_limit/00-story-image-lalibela-ethiopia-is-the-next-machu-picchu.jpg",
-      rating: 4.8,
-      type: "popular",
-    },
-    {
-      id: 2,
-      title: "Southern Ethiopia Cultural Tour",
-      description:
-        "Discover the diverse cultures of the Omo Valley, home to unique tribes and traditions.",
-      duration: "10 days",
-      price: "$1,800",
-      image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      rating: 4.9,
-      type: "new",
-    },
-    {
-      id: 3,
-      title: "Addis Ababa City Tour",
-      description:
-        "Experience the vibrant capital city with its museums, markets, and cultural sites.",
-      duration: "1 day",
-      price: "$150",
-      image:
-        "https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      rating: 4.5,
-      type: "standard",
-    },
-    {
-      id: 4,
-      title: "Danakil Depression Adventure",
-      description:
-        "Journey to one of the hottest places on Earth with its colorful sulfur springs and salt flats.",
-      duration: "5 days",
-      price: "$900",
-      image: "https://waltainfo.com/wp-content/uploads/2023/10/Dal9ol.webp",
-      rating: 4.7,
-      type: "adventure",
-    },
-  ];
-
-  const filteredTours = tours.filter(tour => {
-    const matchesSearch = tour.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         tour.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesDuration = !selectedDuration || tour.duration.includes(selectedDuration);
-    const matchesPrice = !selectedPrice || tour.price <= selectedPrice;
-    
-    return matchesSearch && matchesDuration && matchesPrice;
-  });
+  const [selected, setSelected] = useState(null);
 
   return (
-    <div style={{ paddingTop: '80px' }}>
-      {/* Hero Section */}
+    <div style={{ paddingTop: '80px', background: '#f8f9fa', minHeight: '100vh' }}>
       <section style={{
-        background: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        background: 'linear-gradient(rgba(30,60,114,0.8), rgba(42,82,152,0.8))',
         color: 'white',
-        padding: '6rem 2rem',
-        textAlign: 'center'
+        padding: '3rem 2rem',
+        textAlign: 'center',
+        marginBottom: '2rem'
       }}>
-        <h1 style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>Our Tours</h1>
-        <p style={{ fontSize: '1.3rem', maxWidth: '600px', margin: '0 auto', opacity: 0.9 }}>
-          Discover the wonders of Ethiopia with our carefully curated tours
+        <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Ethiopia's Top Destinations</h1>
+        <p style={{ fontSize: '1.2rem', maxWidth: 700, margin: '0 auto', opacity: 0.95 }}>
+          Explore the most remarkable places in Ethiopia. Click on a destination to learn more about its history, culture, and natural wonders.
         </p>
       </section>
-
-      {/* Content Section */}
-      <section style={{ padding: '3rem 2rem' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          {/* Filters Section */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+        gap: '2rem',
+        maxWidth: 1200,
+        margin: '0 auto',
+        padding: '0 2rem'
+      }}>
+        {destinations.map((dest, idx) => (
+          <div key={dest.name} style={{
+            background: 'white',
+            borderRadius: 20,
+            boxShadow: '0 4px 16px rgba(30,60,114,0.08)',
+            cursor: 'pointer',
+            overflow: 'hidden',
+            transition: 'transform 0.2s',
+            border: selected === idx ? '2px solid #ffd700' : 'none',
+            position: 'relative'
+          }} onClick={() => setSelected(idx)}>
+            <img src={dest.image} alt={dest.name} style={{ width: '100%', height: 200, objectFit: 'cover' }} />
+            <div style={{ padding: '1.5rem' }}>
+              <h2 style={{ color: '#1e3c72', fontSize: '1.3rem', marginBottom: 8 }}>{dest.name}</h2>
+              <p style={{ color: '#666', fontSize: '1rem', minHeight: 48 }}>{dest.short}</p>
+              <span style={{ color: '#2a5298', fontWeight: 500, fontSize: 14 }}>Click for more</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      {/* Modal for full description */}
+      {selected !== null && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          background: 'rgba(30,60,114,0.7)',
+          zIndex: 2000,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }} onClick={() => setSelected(null)}>
           <div style={{
             background: 'white',
+            borderRadius: 20,
+            maxWidth: 500,
+            width: '90vw',
+            boxShadow: '0 8px 32px rgba(30,60,114,0.18)',
             padding: '2rem',
-            borderRadius: '20px',
-            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
-            marginBottom: '3rem'
-          }}>
-            <h3 style={{ fontSize: '1.5rem', color: '#1e3c72', marginBottom: '1.5rem' }}>Filter Tours</h3>
-            
-            {/* Search Bar */}
-            <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
-              <input
-                type="text"
-                placeholder="Search tours..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                style={{
-                  flex: 1,
-                  padding: '1rem',
-                  border: '2px solid #e9ecef',
-                  borderRadius: '10px',
-                  fontSize: '1rem'
-                }}
-              />
-            </div>
-
-            {/* Filter Options */}
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
-              gap: '1.5rem' 
-            }}>
-              <div>
-                <label style={{ display: 'block', marginBottom: '0.5rem', color: '#1e3c72', fontWeight: 500 }}>
-                  Duration
-                </label>
-                <select
-                  value={selectedDuration}
-                  onChange={(e) => setSelectedDuration(e.target.value)}
-                  style={{
-                    width: '100%',
-                    padding: '0.8rem',
-                    border: '2px solid #e9ecef',
-                    borderRadius: '10px',
-                    fontSize: '1rem'
-                  }}
-                >
-                  <option value="">All Durations</option>
-                  <option value="1">1 Day</option>
-                  <option value="5">5 Days</option>
-                  <option value="7">7 Days</option>
-                  <option value="10">10 Days</option>
-                </select>
-              </div>
-              <div>
-                <label style={{ display: 'block', marginBottom: '0.5rem', color: '#1e3c72', fontWeight: 500 }}>
-                  Price Range
-                </label>
-                <select
-                  value={selectedPrice}
-                  onChange={(e) => setSelectedPrice(e.target.value)}
-                  style={{
-                    width: '100%',
-                    padding: '0.8rem',
-                    border: '2px solid #e9ecef',
-                    borderRadius: '10px',
-                    fontSize: '1rem'
-                  }}
-                >
-                  <option value="">All Prices</option>
-                  <option value="200">Under $200</option>
-                  <option value="500">Under $500</option>
-                  <option value="1000">Under $1000</option>
-                  <option value="2000">Under $2000</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          {/* Tours Grid */}
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
-            gap: '2rem' 
-          }}>
-            {filteredTours.map(tour => (
-              <div key={tour.id} style={{
-                background: 'white',
-                borderRadius: '20px',
-                overflow: 'hidden',
-                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
-                border: '1px solid #eee'
-              }}>
-                <div style={{
-                  height: '250px',
-                  background: `url(${tour.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  position: 'relative'
-                }}>
-                  <div style={{
-                    position: 'absolute',
-                    top: '1rem',
-                    right: '1rem',
-                    background: tour.type === 'popular' ? '#ffd700' : tour.type === 'new' ? '#28a745' : '#dc3545',
-                    color: tour.type === 'popular' ? '#1e3c72' : 'white',
-                    padding: '0.3rem 0.8rem',
-                    borderRadius: '15px',
-                    fontSize: '0.8rem',
-                    fontWeight: 'bold'
-                  }}>
-                    {tour.type.toUpperCase()}
-                  </div>
-                </div>
-                <div style={{ padding: '1.5rem' }}>
-                  <h3 style={{ fontSize: '1.4rem', color: '#1e3c72', marginBottom: '0.5rem' }}>
-                    {tour.title}
-                  </h3>
-                  <p style={{ color: '#666', lineHeight: 1.6, marginBottom: '1rem' }}>
-                    {tour.description}
-                  </p>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem' }}>
-                    <span style={{ color: '#1e3c72', fontWeight: 500 }}>⭐ {tour.rating}</span>
-                    <span style={{ color: '#666' }}>⏱️ {tour.duration}</span>
-                    <span style={{ color: '#666' }}>👥 Group Tour</span>
-                  </div>
-                  <div style={{ 
-                    display: 'flex', 
-                    justifyContent: 'space-between', 
-                    alignItems: 'center' 
-                  }}>
-                    <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#1e3c72' }}>
-                      {tour.price}
-                    </span>
-                    <button style={{
-                      background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
-                      color: 'white',
-                      border: 'none',
-                      padding: '0.8rem 1.5rem',
-                      borderRadius: '10px',
-                      fontWeight: 'bold',
-                      cursor: 'pointer'
-                    }}>
-                      Book Now
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
+            position: 'relative',
+            textAlign: 'left'
+          }} onClick={e => e.stopPropagation()}>
+            <button onClick={() => setSelected(null)} style={{
+              position: 'absolute',
+              top: 16,
+              right: 16,
+              background: 'none',
+              border: 'none',
+              fontSize: 22,
+              color: '#1e3c72',
+              cursor: 'pointer'
+            }}>&times;</button>
+            <img src={destinations[selected].image} alt={destinations[selected].name} style={{ width: '100%', borderRadius: 12, marginBottom: 16 }} />
+            <h2 style={{ color: '#1e3c72', fontSize: '1.5rem', marginBottom: 12 }}>{destinations[selected].name}</h2>
+            <p style={{ color: '#333', fontSize: '1.1rem' }}>{destinations[selected].full}</p>
           </div>
         </div>
-      </section>
+      )}
     </div>
   );
 };
