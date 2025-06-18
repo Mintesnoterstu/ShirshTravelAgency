@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const destinations = [
   {
     name: 'Lalibela - The Rock-Hewn Churches',
     image: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTvZtzSi574OeohYzn_4OKA3H4zqFy_Y6xLfbmBHKVYoJYIhEmhe3reVb78D13KgUtlFvOQp0vUHU7a8hq4QMBYMZnSfdUwb94gBJeZnrY',
-    short: '11 medieval churches carved from rock. UNESCO World Heritage Site.',
-    full: `Home to 11 medieval monolithic churches carved out of rock in the 12th century. A UNESCO World Heritage Site and important pilgrimage site for Ethiopian Orthodox Christians. The churches are still active, with priests chanting in ancient Ge'ez. Lalibela is often called the "New Jerusalem" and is a marvel of engineering and devotion.`
+    short: 'The Eighth Wonder of the Ancient World. 11 monolithic churches, pilgrimage center, Africa\'s Jerusalem.',
+    full: `Carved in the 12th-13th centuries under King Lalibela\'s rule, these 11 monolithic churches represent one of Christianity\'s most remarkable architectural achievements. The site remains an active pilgrimage center, often called "Africa's Jerusalem."
+
+Key Churches: Bete Giyorgis (St. George), Bete Medhane Alem, Bete Maryam, and an underground tunnel system. Unique experiences include dawn liturgical ceremonies, Timkat celebrations, and candlelit visits during festivals. Entry: $50 (valid 5 days). Best: Oct-Mar. Altitude: 2,630m. Guides mandatory. Dress modestly. Recommended stay: 2-3 nights.`,
+    link: '/lalibela',
   },
   {
     name: 'Simien Mountains National Park',
@@ -22,8 +26,11 @@ const destinations = [
   {
     name: 'Axum - Ancient Kingdom',
     image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/6f/b2/15/from-the-early-4th-century.jpg?w=2000&h=-1&s=1',
-    short: 'Heart of ancient Ethiopia. Obelisks, tombs, Ark of the Covenant legend.',
-    full: `The heart of ancient Ethiopian civilization with towering obelisks, royal tombs, and the legendary Church of St. Mary of Zion (said to house the Ark of the Covenant). Axum was once the capital of a powerful empire trading with Rome and Persia.`
+    short: 'Cradle of Ethiopian Civilization. Obelisks, Ark of the Covenant, ancient ruins.',
+    full: `Capital of the ancient Axumite Kingdom (1st-7th century AD), once a major trading power rivaling Rome and Persia. Believed by many to house the Ark of the Covenant.
+
+Must-see: Stelae Field, Queen of Sheba\'s Palace, King Ezana\'s Inscription, St. Mary of Zion Church, Chapel of the Tablet. Entry: $10-20/site. Best: Nov-Feb. Local guides recommended. Dress code at religious sites. Recommended stay: 2 days.`,
+    link: '/axum',
   },
   {
     name: 'Gondar - The Camelot of Africa',
@@ -101,23 +108,45 @@ const ToursPage = () => {
         padding: '0 2rem'
       }}>
         {destinations.map((dest, idx) => (
-          <div key={dest.name} style={{
-            background: 'white',
-            borderRadius: 20,
-            boxShadow: '0 4px 16px rgba(30,60,114,0.08)',
-            cursor: 'pointer',
-            overflow: 'hidden',
-            transition: 'transform 0.2s',
-            border: selected === idx ? '2px solid #ffd700' : 'none',
-            position: 'relative'
-          }} onClick={() => setSelected(idx)}>
-            <img src={dest.image} alt={dest.name} style={{ width: '100%', height: 200, objectFit: 'cover' }} />
-            <div style={{ padding: '1.5rem' }}>
-              <h2 style={{ color: '#1e3c72', fontSize: '1.3rem', marginBottom: 8 }}>{dest.name}</h2>
-              <p style={{ color: '#666', fontSize: '1rem', minHeight: 48 }}>{dest.short}</p>
-              <span style={{ color: '#2a5298', fontWeight: 500, fontSize: 14 }}>Click for more</span>
+          dest.link ? (
+            <Link key={dest.name} to={dest.link} style={{ textDecoration: 'none' }}>
+              <div style={{
+                background: 'white',
+                borderRadius: 20,
+                boxShadow: '0 4px 16px rgba(30,60,114,0.08)',
+                cursor: 'pointer',
+                overflow: 'hidden',
+                transition: 'transform 0.2s',
+                border: selected === idx ? '2px solid #ffd700' : 'none',
+                position: 'relative'
+              }}>
+                <img src={dest.image} alt={dest.name} style={{ width: '100%', height: 200, objectFit: 'cover' }} />
+                <div style={{ padding: '1.5rem' }}>
+                  <h2 style={{ color: '#1e3c72', fontSize: '1.3rem', marginBottom: 8 }}>{dest.name}</h2>
+                  <p style={{ color: '#666', fontSize: '1rem', minHeight: 48 }}>{dest.short}</p>
+                  <span style={{ color: '#2a5298', fontWeight: 500, fontSize: 14 }}>Click for more</span>
+                </div>
+              </div>
+            </Link>
+          ) : (
+            <div key={dest.name} style={{
+              background: 'white',
+              borderRadius: 20,
+              boxShadow: '0 4px 16px rgba(30,60,114,0.08)',
+              cursor: 'pointer',
+              overflow: 'hidden',
+              transition: 'transform 0.2s',
+              border: selected === idx ? '2px solid #ffd700' : 'none',
+              position: 'relative'
+            }} onClick={() => setSelected(idx)}>
+              <img src={dest.image} alt={dest.name} style={{ width: '100%', height: 200, objectFit: 'cover' }} />
+              <div style={{ padding: '1.5rem' }}>
+                <h2 style={{ color: '#1e3c72', fontSize: '1.3rem', marginBottom: 8 }}>{dest.name}</h2>
+                <p style={{ color: '#666', fontSize: '1rem', minHeight: 48 }}>{dest.short}</p>
+                <span style={{ color: '#2a5298', fontWeight: 500, fontSize: 14 }}>Click for more</span>
+              </div>
             </div>
-          </div>
+          )
         ))}
       </div>
       {/* Modal for full description */}
