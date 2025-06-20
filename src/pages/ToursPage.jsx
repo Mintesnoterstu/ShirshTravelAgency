@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const destinations = [
   {
     name: 'Lalibela - The Rock-Hewn Churches',
     image: 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTvZtzSi574OeohYzn_4OKA3H4zqFy_Y6xLfbmBHKVYoJYIhEmhe3reVb78D13KgUtlFvOQp0vUHU7a8hq4QMBYMZnSfdUwb94gBJeZnrY',
-    short: '11 medieval churches carved from rock. UNESCO World Heritage Site.'
+    short: '11 medieval churches carved from rock. UNESCO World Heritage Site.',
+    link: '/lalibela'
   },
   {
     name: 'Simien Mountains National Park',
@@ -75,7 +77,7 @@ const ToursPage = () => {
       }}>
         <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Ethiopia's Top Destinations</h1>
         <p style={{ fontSize: '1.2rem', maxWidth: 700, margin: '0 auto', opacity: 0.95 }}>
-          Explore the most remarkable places in Ethiopia. Each destination offers unique experiences and cultural insights.
+          Explore the most remarkable places in Ethiopia. Click on destinations to learn more about their history, culture, and natural wonders.
         </p>
       </section>
       <div style={{
@@ -86,28 +88,48 @@ const ToursPage = () => {
         margin: '0 auto',
         padding: '0 2rem'
       }}>
-        {destinations.map((dest) => (
-          <div key={dest.name} style={{
-            background: 'white',
-            borderRadius: 20,
-            boxShadow: '0 4px 16px rgba(30,60,114,0.08)',
-            overflow: 'hidden',
-            transition: 'transform 0.2s',
-            position: 'relative'
-          }} onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'translateY(-5px)';
-            e.currentTarget.style.boxShadow = '0 8px 25px rgba(30,60,114,0.15)';
-          }} onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 4px 16px rgba(30,60,114,0.08)';
-          }}>
-            <img src={dest.image} alt={dest.name} style={{ width: '100%', height: 200, objectFit: 'cover' }} />
-            <div style={{ padding: '1.5rem' }}>
-              <h2 style={{ color: '#1e3c72', fontSize: '1.3rem', marginBottom: 8 }}>{dest.name}</h2>
-              <p style={{ color: '#666', fontSize: '1rem', minHeight: 48 }}>{dest.short}</p>
+        {destinations.map((dest) => {
+          const CardContent = (
+            <div style={{
+              background: 'white',
+              borderRadius: 20,
+              boxShadow: '0 4px 16px rgba(30,60,114,0.08)',
+              overflow: 'hidden',
+              transition: 'transform 0.2s',
+              position: 'relative',
+              cursor: dest.link ? 'pointer' : 'default'
+            }} onMouseEnter={(e) => {
+              if (dest.link) {
+                e.currentTarget.style.transform = 'translateY(-5px)';
+                e.currentTarget.style.boxShadow = '0 8px 25px rgba(30,60,114,0.15)';
+              }
+            }} onMouseLeave={(e) => {
+              if (dest.link) {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(30,60,114,0.08)';
+              }
+            }}>
+              <img src={dest.image} alt={dest.name} style={{ width: '100%', height: 200, objectFit: 'cover' }} />
+              <div style={{ padding: '1.5rem' }}>
+                <h2 style={{ color: '#1e3c72', fontSize: '1.3rem', marginBottom: 8 }}>{dest.name}</h2>
+                <p style={{ color: '#666', fontSize: '1rem', minHeight: 48 }}>{dest.short}</p>
+                {dest.link && (
+                  <span style={{ color: '#2a5298', fontWeight: 500, fontSize: 14 }}>Click for more →</span>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+
+          return dest.link ? (
+            <Link key={dest.name} to={dest.link} style={{ textDecoration: 'none' }}>
+              {CardContent}
+            </Link>
+          ) : (
+            <div key={dest.name}>
+              {CardContent}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
