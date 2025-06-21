@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import ToursPage from './pages/ToursPage';
 import ContactPage from './pages/ContactPage';
+import Booking from './pages/Booking';
 import LalibelaDetails from './pages/LalibelaDetails';
 import AxumDetails from './pages/AxumDetails';
 import GondarDetails from './pages/GondarDetails';
@@ -39,6 +40,7 @@ function AppContent() {
             <Route path="/tours" element={<ToursPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/booking" element={<Booking />} />
             <Route path="/lalibela" element={<LalibelaDetails />} />
             <Route path="/axum" element={<AxumDetails />} />
             <Route path="/gondar" element={<GondarDetails />} />

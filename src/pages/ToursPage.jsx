@@ -108,7 +108,6 @@ const destinations = [
     short: 'Cliff church. 6th-century. Epic climb, ancient frescoes, Gheralta views.',
     link: '/abuna-yemata-guh',
     price: '$320',
-    link: '/booking',
     duration: '2-3 days',
     tourId: 'abuna-012'
   },
