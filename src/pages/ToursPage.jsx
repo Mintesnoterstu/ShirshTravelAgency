@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 
 const destinations = [
   {
@@ -77,10 +78,17 @@ const destinations = [
 ];
 
 const ToursPage = () => {
+  const { currentTheme } = useTheme();
+
   return (
-    <div style={{ paddingTop: '80px', background: '#f8f9fa', minHeight: '100vh' }}>
+    <div style={{ 
+      paddingTop: '80px', 
+      background: currentTheme.background, 
+      minHeight: '100vh',
+      transition: 'all 0.3s ease'
+    }}>
       <section style={{
-        background: 'linear-gradient(rgba(30,60,114,0.8), rgba(42,82,152,0.8))',
+        background: `linear-gradient(rgba(30,60,114,0.8), rgba(42,82,152,0.8))`,
         color: 'white',
         padding: '3rem 2rem',
         textAlign: 'center',
@@ -102,25 +110,26 @@ const ToursPage = () => {
         {destinations.map((dest) => {
           const CardContent = (
             <div style={{
-              background: 'white',
+              background: currentTheme.cardBackground,
               borderRadius: 20,
-              boxShadow: '0 4px 16px rgba(30,60,114,0.08)',
+              boxShadow: `0 4px 16px ${currentTheme.shadow}`,
               overflow: 'hidden',
-              transition: 'transform 0.2s',
+              transition: 'all 0.3s ease',
               position: 'relative',
               cursor: dest.link ? 'pointer' : 'default',
               height: '400px',
               display: 'flex',
-              flexDirection: 'column'
+              flexDirection: 'column',
+              border: `1px solid ${currentTheme.border}`
             }} onMouseEnter={(e) => {
               if (dest.link) {
                 e.currentTarget.style.transform = 'translateY(-5px)';
-                e.currentTarget.style.boxShadow = '0 8px 25px rgba(30,60,114,0.15)';
+                e.currentTarget.style.boxShadow = `0 8px 25px ${currentTheme.shadow}`;
               }
             }} onMouseLeave={(e) => {
               if (dest.link) {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 16px rgba(30,60,114,0.08)';
+                e.currentTarget.style.boxShadow = `0 4px 16px ${currentTheme.shadow}`;
               }
             }}>
               <img src={dest.image} alt={dest.name} style={{ 
@@ -138,7 +147,7 @@ const ToursPage = () => {
               }}>
                 <div>
                   <h2 style={{ 
-                    color: '#1e3c72', 
+                    color: currentTheme.primary, 
                     fontSize: '1.3rem', 
                     marginBottom: 8,
                     lineHeight: '1.3',
@@ -149,7 +158,7 @@ const ToursPage = () => {
                     overflow: 'hidden'
                   }}>{dest.name}</h2>
                   <p style={{ 
-                    color: '#666', 
+                    color: currentTheme.text, 
                     fontSize: '1rem',
                     lineHeight: '1.4',
                     minHeight: '2.8rem',
@@ -157,12 +166,13 @@ const ToursPage = () => {
                     WebkitLineClamp: 2,
                     WebkitBoxOrient: 'vertical',
                     overflow: 'hidden',
-                    marginBottom: '1rem'
+                    marginBottom: '1rem',
+                    opacity: 0.8
                   }}>{dest.short}</p>
                 </div>
                 {dest.link && (
                   <span style={{ 
-                    color: '#2a5298', 
+                    color: currentTheme.accent, 
                     fontWeight: 500, 
                     fontSize: 14,
                     marginTop: 'auto'

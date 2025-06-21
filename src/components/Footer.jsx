@@ -1,12 +1,16 @@
 import React from 'react';
+import { useTheme } from '../context/ThemeContext';
 
 const Footer = () => {
+  const { currentTheme } = useTheme();
+
   return (
     <footer style={{
-      background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
-      color: 'white',
+      background: currentTheme.footerBackground,
+      color: currentTheme.footerText,
       padding: '2rem',
-      textAlign: 'center'
+      textAlign: 'center',
+      transition: 'all 0.3s ease'
     }}>
       <p>© 2024 Ethiopian Travel Agency. All rights reserved.</p>
     </footer>
