@@ -1,100 +1,121 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 
 const BaleMountainsDetails = () => {
+  const { currentTheme } = useTheme();
   console.log('BaleMountainsDetails component is rendering!'); // Debug log
   
   return (
     <div style={{ 
       paddingTop: '100px', 
-      background: 'white', 
+      background: currentTheme.background, 
       minHeight: '100vh',
       padding: '2rem',
       maxWidth: '1200px',
-      margin: '0 auto'
+      margin: '0 auto',
+      transition: 'all 0.3s ease'
     }}>
       <div style={{ 
-        background: 'linear-gradient(135deg, #228B22, #32CD32)', 
+        background: `linear-gradient(rgba(139, 69, 19, 0.5), rgba(205, 133, 63, 0.5)), url('https://as1.ftcdn.net/v2/jpg/04/81/01/08/1000_F_481010899_hDF8kx3A0TY0alVcbtSszeA8T5msbgaN.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         color: 'white', 
-        padding: '2rem', 
+        padding: '3rem 2rem', 
         borderRadius: '15px',
         marginBottom: '2rem',
-        boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+        boxShadow: `0 4px 15px ${currentTheme.shadow}`,
+        minHeight: '300px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center'
       }}>
         <h1 style={{ 
           color: 'white', 
           fontSize: '2.5rem', 
           marginBottom: '1rem',
-          textAlign: 'center'
+          textAlign: 'center',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.89)'
         }}>
-          Bale Mountains - Ethiopia's Secret Wilderness
+          Bale Mountains - Ethiopia's Highland Paradise
         </h1>
         <p style={{ 
           fontSize: '1.2rem', 
           lineHeight: '1.6', 
           textAlign: 'center',
-          fontStyle: 'italic'
+          fontStyle: 'italic',
+          textShadow: '1px 1px 2px rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.89)',
+          maxWidth: '800px'
         }}>
-          Where Wolves Roam and Cloud Forests Whisper
+          Where Rare Wildlife Roams the Afro-Alpine Meadows
         </p>
       </div>
 
       <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{ color: '#228B22', fontSize: '1.8rem', marginBottom: '1rem' }}>An Ecological Wonderland</h2>
+        <h2 style={{ color: currentTheme.primary, fontSize: '1.8rem', marginBottom: '1rem' }}>An Ecological Wonderland</h2>
         <div style={{ 
-          background: '#f0fff0', 
+          background: currentTheme.surface, 
           padding: '1.5rem', 
           borderRadius: '10px',
-          borderLeft: '4px solid #228B22'
+          borderLeft: `4px solid ${currentTheme.primary}`
         }}>
-          <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1rem' }}>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1rem', color: currentTheme.text }}>
             Hidden in Ethiopia's southeast, the <strong>Bale Mountains National Park</strong> is a world of extremes—from <strong>alpine meadows</strong> to <strong>dense rainforests</strong>, all above 3,000m. This UNESCO Biosphere Reserve shelters:
           </p>
           <ul style={{ listStyle: 'none', padding: 0 }}>
             <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#228B22', marginRight: '10px', fontSize: '1.2rem' }}>🦁</span>
-              <strong>More than 60 mammal species</strong>
+              <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem' }}>🦁</span>
+              <div style={{ color: currentTheme.text }}>
+                <strong>More than 60 mammal species</strong>
+              </div>
             </li>
             <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#228B22', marginRight: '10px', fontSize: '1.2rem' }}>🦅</span>
-              <strong>Over 300 bird species</strong> (including 16 endemics)
+              <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem' }}>🦅</span>
+              <div style={{ color: currentTheme.text }}>
+                <strong>Over 300 bird species</strong> (including 16 endemics)
+              </div>
             </li>
             <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#228B22', marginRight: '10px', fontSize: '1.2rem' }}>🏔️</span>
-              <strong>Africa's largest alpine ecosystem</strong>
+              <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem' }}>🏔️</span>
+              <div style={{ color: currentTheme.text }}>
+                <strong>Africa's largest alpine ecosystem</strong>
+              </div>
             </li>
           </ul>
         </div>
       </div>
 
       <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{ color: '#228B22', fontSize: '1.8rem', marginBottom: '1rem' }}>🌿 Must-See Marvels</h2>
+        <h2 style={{ color: currentTheme.primary, fontSize: '1.8rem', marginBottom: '1rem' }}>🌿 Must-See Marvels</h2>
         
         <div style={{ marginBottom: '2rem' }}>
-          <h3 style={{ color: '#228B22', fontSize: '1.4rem', marginBottom: '1rem' }}>1. Sanetti Plateau</h3>
+          <h3 style={{ color: currentTheme.primary, fontSize: '1.4rem', marginBottom: '1rem' }}>1. Sanetti Plateau</h3>
           <div style={{ 
-            background: '#fff', 
+            background: currentTheme.surface, 
             padding: '1.5rem', 
             borderRadius: '10px',
-            border: '1px solid #e9ecef',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+            border: `1px solid ${currentTheme.border}`,
+            boxShadow: `0 2px 8px ${currentTheme.shadow}`
           }}>
             <ul style={{ listStyle: 'none', padding: 0 }}>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#228B22', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🛣️</span>
-                <div>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🛣️</span>
+                <div style={{ color: currentTheme.text }}>
                   Walk across <strong>Africa's highest paved road</strong> (4,000m)
                 </div>
               </li>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#228B22', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🐺</span>
-                <div>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🐺</span>
+                <div style={{ color: currentTheme.text }}>
                   Spot the <strong>endangered Ethiopian wolf</strong> (only 500 remain)
                 </div>
               </li>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#228B22', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🌱</span>
-                <div>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🌱</span>
+                <div style={{ color: currentTheme.text }}>
                   See <strong>giant lobelia plants</strong> straight from a Dr. Seuss book
                 </div>
               </li>
@@ -103,30 +124,30 @@ const BaleMountainsDetails = () => {
         </div>
 
         <div style={{ marginBottom: '2rem' }}>
-          <h3 style={{ color: '#228B22', fontSize: '1.4rem', marginBottom: '1rem' }}>2. Harenna Forest</h3>
+          <h3 style={{ color: currentTheme.primary, fontSize: '1.4rem', marginBottom: '1rem' }}>2. Harenna Forest</h3>
           <div style={{ 
-            background: '#fff', 
+            background: currentTheme.surface, 
             padding: '1.5rem', 
             borderRadius: '10px',
-            border: '1px solid #e9ecef',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+            border: `1px solid ${currentTheme.border}`,
+            boxShadow: `0 2px 8px ${currentTheme.shadow}`
           }}>
             <ul style={{ listStyle: 'none', padding: 0 }}>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#228B22', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🌲</span>
-                <div>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🌲</span>
+                <div style={{ color: currentTheme.text }}>
                   Trek through <strong>cloud forests</strong> dripping with moss
                 </div>
               </li>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#228B22', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>💧</span>
-                <div>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>💧</span>
+                <div style={{ color: currentTheme.text }}>
                   Discover <strong>hidden waterfalls</strong> and coffee-growing villages
                 </div>
               </li>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#228B22', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🐒</span>
-                <div>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🐒</span>
+                <div style={{ color: currentTheme.text }}>
                   Listen for <strong>colobus monkeys</strong> in the canopy
                 </div>
               </li>
@@ -135,30 +156,30 @@ const BaleMountainsDetails = () => {
         </div>
 
         <div style={{ marginBottom: '2rem' }}>
-          <h3 style={{ color: '#228B22', fontSize: '1.4rem', marginBottom: '1rem' }}>3. Dinsho Wildlife Sanctuary</h3>
+          <h3 style={{ color: currentTheme.primary, fontSize: '1.4rem', marginBottom: '1rem' }}>3. Dinsho Wildlife Sanctuary</h3>
           <div style={{ 
-            background: '#fff', 
+            background: currentTheme.surface, 
             padding: '1.5rem', 
             borderRadius: '10px',
-            border: '1px solid #e9ecef',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+            border: `1px solid ${currentTheme.border}`,
+            boxShadow: `0 2px 8px ${currentTheme.shadow}`
           }}>
             <ul style={{ listStyle: 'none', padding: 0 }}>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#228B22', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🦌</span>
-                <div>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🦌</span>
+                <div style={{ color: currentTheme.text }}>
                   See <strong>mountain nyala</strong> (found only here)
                 </div>
               </li>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#228B22', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🐒</span>
-                <div>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🐒</span>
+                <div style={{ color: currentTheme.text }}>
                   Spot <strong>Bale monkeys</strong> at dawn
                 </div>
               </li>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#228B22', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🏢</span>
-                <div>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🏢</span>
+                <div style={{ color: currentTheme.text }}>
                   Visit <strong>park headquarters</strong> for conservation insights
                 </div>
               </li>
@@ -168,80 +189,92 @@ const BaleMountainsDetails = () => {
       </div>
 
       <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{ color: '#228B22', fontSize: '1.8rem', marginBottom: '1rem' }}>🐺 Unique Wildlife Encounters</h2>
+        <h2 style={{ color: currentTheme.primary, fontSize: '1.8rem', marginBottom: '1rem' }}>🐺 Unique Wildlife Encounters</h2>
         <div style={{ 
-          background: '#e8f5e8', 
+          background: currentTheme.surface, 
           padding: '1.5rem', 
           borderRadius: '10px',
-          border: '1px solid #28a745'
+          border: `1px solid ${currentTheme.accent}`
         }}>
           <ul style={{ listStyle: 'none', padding: 0 }}>
             <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#28a745', marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
-              <strong>Ethiopian wolf tracking</strong> with researchers
+              <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
+              <div style={{ color: currentTheme.text }}>
+                <strong>Ethiopian wolf tracking</strong> with researchers
+              </div>
             </li>
             <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#28a745', marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
-              <strong>Birdwatching</strong> for rare species like the blue-winged goose
+              <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
+              <div style={{ color: currentTheme.text }}>
+                <strong>Birdwatching</strong> for rare species like the blue-winged goose
+              </div>
             </li>
             <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#28a745', marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
-              <strong>Night drives</strong> to spot serval cats and genets
+              <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
+              <div style={{ color: currentTheme.text }}>
+                <strong>Night drives</strong> to spot serval cats and genets
+              </div>
             </li>
           </ul>
         </div>
       </div>
 
       <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{ color: '#228B22', fontSize: '1.8rem', marginBottom: '1rem' }}>🌍 Why Visit Bale Over Other Parks?</h2>
+        <h2 style={{ color: currentTheme.primary, fontSize: '1.8rem', marginBottom: '1rem' }}>🌍 Why Visit Bale Over Other Parks?</h2>
         <div style={{ 
-          background: '#fff3cd', 
+          background: currentTheme.surface, 
           padding: '1.5rem', 
           borderRadius: '10px',
-          border: '1px solid #ffc107'
+          border: `1px solid ${currentTheme.accent}`
         }}>
           <ul style={{ listStyle: 'none', padding: 0 }}>
             <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#856404', marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
-              <strong>Fewer tourists</strong> than Simien Mountains
+              <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
+              <div style={{ color: currentTheme.text }}>
+                <strong>Fewer tourists</strong> than Simien Mountains
+              </div>
             </li>
             <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#856404', marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
-              <strong>Year-round access</strong> (no rainy season closures)
+              <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
+              <div style={{ color: currentTheme.text }}>
+                <strong>Year-round access</strong> (no rainy season closures)
+              </div>
             </li>
             <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#856404', marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
-              <strong>Diverse landscapes</strong> in one compact area
+              <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
+              <div style={{ color: currentTheme.text }}>
+                <strong>Diverse landscapes</strong> in one compact area
+              </div>
             </li>
           </ul>
         </div>
       </div>
 
       <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{ color: '#228B22', fontSize: '1.8rem', marginBottom: '1rem' }}>📅 Practical Tips</h2>
+        <h2 style={{ color: currentTheme.primary, fontSize: '1.8rem', marginBottom: '1rem' }}>📅 Practical Tips</h2>
         <div style={{ 
-          background: '#f8d7da', 
+          background: currentTheme.surface, 
           padding: '1.5rem', 
           borderRadius: '10px',
-          border: '1px solid #dc3545'
+          border: `1px solid ${currentTheme.accent}`
         }}>
           <div style={{ marginBottom: '1rem' }}>
-            <h3 style={{ color: '#721c24', marginBottom: '0.5rem' }}>🌤️ Best Time</h3>
-            <p><strong>November-March</strong> (dry season)</p>
+            <h3 style={{ color: currentTheme.primary, marginBottom: '0.5rem' }}>🌤️ Best Time</h3>
+            <p style={{ color: currentTheme.text }}><strong>November-March</strong> (dry season)</p>
           </div>
           <div style={{ marginBottom: '1rem' }}>
-            <h3 style={{ color: '#721c24', marginBottom: '0.5rem' }}>🏘️ Base Town</h3>
-            <p><strong>Goba</strong> (basic but charming)</p>
+            <h3 style={{ color: currentTheme.primary, marginBottom: '0.5rem' }}>🏘️ Base Town</h3>
+            <p style={{ color: currentTheme.text }}><strong>Goba</strong> (basic but charming)</p>
           </div>
           <div>
-            <h3 style={{ color: '#721c24', marginBottom: '0.5rem' }}>🧥 Must-Pack</h3>
-            <p><strong>Warm layers</strong> (nights drop below freezing)</p>
+            <h3 style={{ color: currentTheme.primary, marginBottom: '0.5rem' }}>🧥 Must-Pack</h3>
+            <p style={{ color: currentTheme.text }}><strong>Warm layers</strong> (nights drop below freezing)</p>
           </div>
         </div>
       </div>
 
       <div style={{ 
-        background: 'linear-gradient(135deg, #228B22, #32CD32)', 
+        background: `linear-gradient(135deg, ${currentTheme.primary}, ${currentTheme.secondary})`, 
         color: 'white', 
         padding: '2rem', 
         borderRadius: '15px',
@@ -259,7 +292,7 @@ const BaleMountainsDetails = () => {
 
       <div style={{ textAlign: 'center' }}>
         <Link to="/tours" style={{
-          background: '#228B22',
+          background: currentTheme.primary,
           color: 'white',
           padding: '1rem 2rem',
           borderRadius: '10px',
@@ -268,7 +301,7 @@ const BaleMountainsDetails = () => {
           marginTop: '1rem',
           fontSize: '1.1rem',
           fontWeight: 'bold',
-          transition: 'background 0.3s ease'
+          transition: 'all 0.3s ease'
         }}>
           Back to Tours
         </Link>

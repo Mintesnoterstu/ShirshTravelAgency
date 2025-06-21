@@ -1,31 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 
 const NationalMuseumDetails = () => {
+  const { currentTheme } = useTheme();
   console.log('NationalMuseumDetails component is rendering!'); // Debug log
   
   return (
     <div style={{ 
       paddingTop: '100px', 
-      background: 'white', 
+      background: currentTheme.background, 
       minHeight: '100vh',
       padding: '2rem',
       maxWidth: '1200px',
-      margin: '0 auto'
+      margin: '0 auto',
+      transition: 'all 0.3s ease'
     }}>
       <div style={{ 
-        background: 'linear-gradient(135deg, #2E8B57, #3CB371)', 
+        background: `linear-gradient(rgba(139, 69, 19, 0.5), rgba(205, 133, 63, 0.5)), url('https://as1.ftcdn.net/v2/jpg/04/81/01/08/1000_F_481010899_hDF8kx3A0TY0alVcbtSszeA8T5msbgaN.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         color: 'white', 
-        padding: '2rem', 
+        padding: '3rem 2rem', 
         borderRadius: '15px',
         marginBottom: '2rem',
-        boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+        boxShadow: `0 4px 15px ${currentTheme.shadow}`,
+        minHeight: '300px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center'
       }}>
         <h1 style={{ 
           color: 'white', 
           fontSize: '2.5rem', 
           marginBottom: '1rem',
-          textAlign: 'center'
+          textAlign: 'center',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.89)'
         }}>
           National Museum of Ethiopia - Cradle of Humankind
         </h1>
@@ -33,47 +46,55 @@ const NationalMuseumDetails = () => {
           fontSize: '1.2rem', 
           lineHeight: '1.6', 
           textAlign: 'center',
-          fontStyle: 'italic'
+          fontStyle: 'italic',
+          textShadow: '1px 1px 2px rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.89)',
+          maxWidth: '800px'
         }}>
           Where Lucy Walks You Through Millennia of History
         </p>
       </div>
 
       <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{ color: '#2E8B57', fontSize: '1.8rem', marginBottom: '1rem' }}>A Journey Through Ethiopia's Living Legacy</h2>
+        <h2 style={{ color: currentTheme.primary, fontSize: '1.8rem', marginBottom: '1rem' }}>A Journey Through Ethiopia's Living Legacy</h2>
         <div style={{ 
-          background: '#f0fff0', 
+          background: currentTheme.surface, 
           padding: '1.5rem', 
           borderRadius: '10px',
-          borderLeft: '4px solid #2E8B57'
+          borderLeft: `4px solid ${currentTheme.primary}`
         }}>
-          <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1rem' }}>
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1rem', color: currentTheme.text }}>
             Step into the <strong>National Museum of Ethiopia</strong> in Addis Ababa, where the nation's 3,000-year history unfolds across four fascinating floors. This is much more than a museum—it's:
           </p>
           <ul style={{ listStyle: 'none', padding: 0 }}>
             <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#2E8B57', marginRight: '10px', fontSize: '1.2rem' }}>🦴</span>
-              <strong>Home to "Lucy"</strong>, our 3.2 million-year-old ancestor
+              <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem' }}>🦴</span>
+              <div style={{ color: currentTheme.text }}>
+                <strong>Home to "Lucy"</strong>, our 3.2 million-year-old ancestor
+              </div>
             </li>
             <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#2E8B57', marginRight: '10px', fontSize: '1.2rem' }}>👑</span>
-              <strong>Guardian of Ethiopia's imperial treasures</strong>
+              <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem' }}>👑</span>
+              <div style={{ color: currentTheme.text }}>
+                <strong>Guardian of Ethiopia's imperial treasures</strong>
+              </div>
             </li>
             <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#2E8B57', marginRight: '10px', fontSize: '1.2rem' }}>🎨</span>
-              <strong>Showcase of Africa's diverse artistic heritage</strong>
+              <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem' }}>🎨</span>
+              <div style={{ color: currentTheme.text }}>
+                <strong>Showcase of Africa's diverse artistic heritage</strong>
+              </div>
             </li>
           </ul>
         </div>
       </div>
 
       <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{ color: '#2E8B57', fontSize: '1.8rem', marginBottom: '1rem' }}>✨ Must-See Exhibits</h2>
+        <h2 style={{ color: currentTheme.primary, fontSize: '1.8rem', marginBottom: '1rem' }}>✨ Must-See Exhibits</h2>
         
         <div style={{ marginBottom: '2rem' }}>
-          <h3 style={{ color: '#2E8B57', fontSize: '1.4rem', marginBottom: '1rem' }}>1. Paleontology Wing (Basement)</h3>
+          <h3 style={{ color: currentTheme.primary, fontSize: '1.4rem', marginBottom: '1rem' }}>1. Paleontology Wing (Basement)</h3>
           <div style={{ 
-            background: '#fff', 
+            background: currentTheme.surface, 
             padding: '1.5rem', 
             borderRadius: '10px',
             border: '1px solid #e9ecef',
@@ -81,19 +102,19 @@ const NationalMuseumDetails = () => {
           }}>
             <ul style={{ listStyle: 'none', padding: 0 }}>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#2E8B57', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🦴</span>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🦴</span>
                 <div>
                   Meet <strong>Lucy (Dinkinesh)</strong>, the most famous Australopithecus afarensis skeleton
                 </div>
               </li>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#2E8B57', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>👶</span>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>👶</span>
                 <div>
                   See <strong>Selam</strong>, the 3.3 million-year-old "Lucy's baby"
                 </div>
               </li>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#2E8B57', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🛠️</span>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🛠️</span>
                 <div>
                   Marvel at <strong>prehistoric tools</strong> used by early humans
                 </div>
@@ -103,9 +124,9 @@ const NationalMuseumDetails = () => {
         </div>
 
         <div style={{ marginBottom: '2rem' }}>
-          <h3 style={{ color: '#2E8B57', fontSize: '1.4rem', marginBottom: '1rem' }}>2. Archaeological Treasures (Ground Floor)</h3>
+          <h3 style={{ color: currentTheme.primary, fontSize: '1.4rem', marginBottom: '1rem' }}>2. Archaeological Treasures (Ground Floor)</h3>
           <div style={{ 
-            background: '#fff', 
+            background: currentTheme.surface, 
             padding: '1.5rem', 
             borderRadius: '10px',
             border: '1px solid #e9ecef',
@@ -113,19 +134,19 @@ const NationalMuseumDetails = () => {
           }}>
             <ul style={{ listStyle: 'none', padding: 0 }}>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#2E8B57', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🏛️</span>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🏛️</span>
                 <div>
                   <strong>Aksumite artifacts</strong> including ancient coins and the <strong>Maqdala treasures</strong>
                 </div>
               </li>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#2E8B57', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>👑</span>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>👑</span>
                 <div>
                   <strong>Medieval royal crowns</strong> adorned with gold and gemstones
                 </div>
               </li>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#2E8B57', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>📜</span>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>📜</span>
                 <div>
                   <strong>Ancient Sabaean inscriptions</strong> from pre-Christian Ethiopia
                 </div>
@@ -135,9 +156,9 @@ const NationalMuseumDetails = () => {
         </div>
 
         <div style={{ marginBottom: '2rem' }}>
-          <h3 style={{ color: '#2E8B57', fontSize: '1.4rem', marginBottom: '1rem' }}>3. Ethnographic Gallery (Second Floor)</h3>
+          <h3 style={{ color: currentTheme.primary, fontSize: '1.4rem', marginBottom: '1rem' }}>3. Ethnographic Gallery (Second Floor)</h3>
           <div style={{ 
-            background: '#fff', 
+            background: currentTheme.surface, 
             padding: '1.5rem', 
             borderRadius: '10px',
             border: '1px solid #e9ecef',
@@ -145,19 +166,19 @@ const NationalMuseumDetails = () => {
           }}>
             <ul style={{ listStyle: 'none', padding: 0 }}>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#2E8B57', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>👗</span>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>👗</span>
                 <div>
                   <strong>Traditional costumes</strong> from 80+ Ethiopian ethnic groups
                 </div>
               </li>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#2E8B57', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>⛪</span>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>⛪</span>
                 <div>
                   <strong>Liturgical art</strong> including processional crosses and illuminated bibles
                 </div>
               </li>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#2E8B57', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🎵</span>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🎵</span>
                 <div>
                   <strong>Musical instruments</strong> used in sacred ceremonies
                 </div>
@@ -167,9 +188,9 @@ const NationalMuseumDetails = () => {
         </div>
 
         <div style={{ marginBottom: '2rem' }}>
-          <h3 style={{ color: '#2E8B57', fontSize: '1.4rem', marginBottom: '1rem' }}>4. Imperial Collection (Top Floor)</h3>
+          <h3 style={{ color: currentTheme.primary, fontSize: '1.4rem', marginBottom: '1rem' }}>4. Imperial Collection (Top Floor)</h3>
           <div style={{ 
-            background: '#fff', 
+            background: currentTheme.surface, 
             padding: '1.5rem', 
             borderRadius: '10px',
             border: '1px solid #e9ecef',
@@ -177,19 +198,19 @@ const NationalMuseumDetails = () => {
           }}>
             <ul style={{ listStyle: 'none', padding: 0 }}>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#2E8B57', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🛏️</span>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🛏️</span>
                 <div>
                   <strong>Emperor Haile Selassie's bedroom</strong> recreated with original furnishings
                 </div>
               </li>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#2E8B57', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>👑</span>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>👑</span>
                 <div>
                   <strong>Coronation robes</strong> and gifts from world leaders
                 </div>
               </li>
               <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#2E8B57', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>📸</span>
+                <span style={{ color: currentTheme.primary, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>📸</span>
                 <div>
                   <strong>Historical photographs</strong> documenting Ethiopia's resistance to colonization
                 </div>
@@ -200,9 +221,9 @@ const NationalMuseumDetails = () => {
       </div>
 
       <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{ color: '#2E8B57', fontSize: '1.8rem', marginBottom: '1rem' }}>🌍 Why This Museum Stands Apart</h2>
+        <h2 style={{ color: currentTheme.primary, fontSize: '1.8rem', marginBottom: '1rem' }}>�� Why This Museum Stands Apart</h2>
         <div style={{ 
-          background: '#e8f5e8', 
+          background: currentTheme.surface, 
           padding: '1.5rem', 
           borderRadius: '10px',
           border: '1px solid #28a745'
@@ -225,9 +246,9 @@ const NationalMuseumDetails = () => {
       </div>
 
       <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{ color: '#2E8B57', fontSize: '1.8rem', marginBottom: '1rem' }}>📅 Visitor Tips</h2>
+        <h2 style={{ color: currentTheme.primary, fontSize: '1.8rem', marginBottom: '1rem' }}>📅 Visitor Tips</h2>
         <div style={{ 
-          background: '#fff3cd', 
+          background: currentTheme.surface, 
           padding: '1.5rem', 
           borderRadius: '10px',
           border: '1px solid #ffc107'

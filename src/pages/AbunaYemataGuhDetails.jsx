@@ -1,101 +1,145 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 
 const AbunaYemataGuhDetails = () => {
+  const { currentTheme } = useTheme();
   console.log('AbunaYemataGuhDetails component is rendering!'); // Debug log
   
   return (
     <div style={{ 
       paddingTop: '100px', 
-      background: 'white', 
+      background: currentTheme.background, 
       minHeight: '100vh',
       padding: '2rem',
       maxWidth: '1200px',
-      margin: '0 auto'
+      margin: '0 auto',
+      transition: 'all 0.3s ease'
     }}>
       <div style={{ 
-        background: 'linear-gradient(135deg, #8B4513, #CD853F)', 
+        background: `linear-gradient(rgba(139, 69, 19, 0.5), rgba(205, 133, 63, 0.5)), url('https://as1.ftcdn.net/v2/jpg/04/81/01/08/1000_F_481010899_hDF8kx3A0TY0alVcbtSszeA8T5msbgaN.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         color: 'white', 
-        padding: '2rem', 
+        padding: '3rem 2rem', 
         borderRadius: '15px',
         marginBottom: '2rem',
-        boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+        boxShadow: `0 4px 15px ${currentTheme.shadow}`,
+        minHeight: '300px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center'
       }}>
         <h1 style={{ 
           color: 'white', 
           fontSize: '2.5rem', 
           marginBottom: '1rem',
-          textAlign: 'center'
+          textAlign: 'center',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.89)'
         }}>
-          Abuna Yemata Guh - The Cliffside Miracle
+          Abuna Yemata Guh - The Cliff Church
         </h1>
         <p style={{ 
           fontSize: '1.2rem', 
           lineHeight: '1.6', 
           textAlign: 'center',
-          fontStyle: 'italic'
+          fontStyle: 'italic',
+          textShadow: '1px 1px 2px rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.89)',
+          maxWidth: '800px'
         }}>
           Where Faith Defies Gravity
         </p>
       </div>
 
       <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{ color: '#8B4513', fontSize: '1.8rem', marginBottom: '1rem' }}>The World's Most Inaccessible Church</h2>
+        <h2 style={{ color: currentTheme.primary, fontSize: '1.8rem', marginBottom: '1rem' }}>A Church in the Sky</h2>
         <div style={{ 
-          background: '#fff5f5', 
+          background: currentTheme.surface, 
           padding: '1.5rem', 
           borderRadius: '10px',
-          borderLeft: '4px solid #8B4513'
+          borderLeft: `4px solid ${currentTheme.primary}`
         }}>
-          <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1rem' }}>
-            Carved into a <strong>sheer 300-meter cliff</strong> in Tigray's Gheralta Mountains, the 5th-century <strong>Abuna Yemata Guh</strong> offers:
+          <p style={{ fontSize: '1.1rem', lineHeight: '1.6', color: currentTheme.text }}>
+            Welcome to <strong>Abuna Yemata Guh</strong>, one of Ethiopia's most extraordinary rock-hewn churches. Perched <strong>2,580 meters above sea level</strong> on a sheer cliff face in the Tigray region, this church represents the pinnacle of human determination and spiritual devotion. Carved directly into the sandstone rock in the <strong>6th century</strong>, Abuna Yemata Guh is accessible only by a <strong>challenging climb</strong> that includes narrow ledges and a final ascent up a vertical rock face. The reward for this daring journey is a church adorned with <strong>stunning frescoes</strong> and a spiritual atmosphere that has remained unchanged for over 1,500 years.
           </p>
-          <ul style={{ listStyle: 'none', padding: 0 }}>
-            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#8B4513', marginRight: '10px', fontSize: '1.2rem' }}>🎨</span>
-              <strong>Breathtaking frescoes</strong> untouched by time
-            </li>
-            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#8B4513', marginRight: '10px', fontSize: '1.2rem' }}>💓</span>
-              <strong>A heart-pounding ascent</strong> (no safety ropes)
-            </li>
-            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#8B4513', marginRight: '10px', fontSize: '1.2rem' }}>🙏</span>
-              <strong>Spiritual rewards</strong> beyond imagination
-            </li>
-          </ul>
         </div>
       </div>
 
       <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{ color: '#8B4513', fontSize: '1.8rem', marginBottom: '1rem' }}>✝️ The Pilgrim's Journey</h2>
+        <h2 style={{ color: currentTheme.primary, fontSize: '1.8rem', marginBottom: '1rem' }}>✨ The Journey to Abuna Yemata Guh</h2>
         
         <div style={{ marginBottom: '2rem' }}>
-          <h3 style={{ color: '#8B4513', fontSize: '1.4rem', marginBottom: '1rem' }}>1. The Ascent</h3>
+          <h3 style={{ color: currentTheme.primary, fontSize: '1.4rem', marginBottom: '1rem' }}>1. The Climb - A Test of Faith</h3>
           <div style={{ 
-            background: '#fff', 
+            background: currentTheme.cardBackground, 
             padding: '1.5rem', 
             borderRadius: '10px',
-            border: '1px solid #e9ecef',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+            border: `1px solid ${currentTheme.border}`,
+            boxShadow: `0 2px 8px ${currentTheme.shadow}`
           }}>
+            <p style={{ marginBottom: '1rem', fontWeight: 'bold', color: currentTheme.primary }}>Vertical Adventure</p>
+            <p style={{ marginBottom: '1rem', color: currentTheme.text }}>
+              The journey to Abuna Yemata Guh is not for the faint-hearted:
+            </p>
             <ul style={{ listStyle: 'none', padding: 0 }}>
-              <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#8B4513', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>⏱️</span>
-                <div>
-                  <strong>1.5-hour climb</strong> using hand-carved footholds
+              <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'flex-start' }}>
+                <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🏔️</span>
+                <div style={{ color: currentTheme.text }}>
+                  <strong>2-Hour Ascent</strong>: Begin with a <strong>steep mountain trail</strong> through the Tigray highlands.
                 </div>
               </li>
-              <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#8B4513', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🧗</span>
-                <div>
-                  <strong>Final 10-meter vertical stretch</strong> requiring barefoot climbing
+              <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'flex-start' }}>
+                <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🦶</span>
+                <div style={{ color: currentTheme.text }}>
+                  <strong>Narrow Ledges</strong>: Navigate <strong>foot-wide paths</strong> carved into the cliff face.
                 </div>
               </li>
-              <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#8B4513', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>👥</span>
-                <div>
-                  <strong>Local guides</strong> who've made the trip thousands of times
+              <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'flex-start' }}>
+                <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🧗</span>
+                <div style={{ color: currentTheme.text }}>
+                  <strong>Final Climb</strong>: Scale a <strong>vertical rock face</strong> using hand and foot holds.
+                </div>
+              </li>
+            </ul>
+            <p style={{ marginTop: '1rem', fontStyle: 'italic', color: currentTheme.text, opacity: 0.8 }}>
+              <strong>Local Guides</strong>: Experienced guides ensure your safety throughout the journey.
+            </p>
+          </div>
+        </div>
+
+        <div style={{ marginBottom: '2rem' }}>
+          <h3 style={{ color: currentTheme.primary, fontSize: '1.4rem', marginBottom: '1rem' }}>2. The Church - A Masterpiece in Stone</h3>
+          <div style={{ 
+            background: currentTheme.cardBackground, 
+            padding: '1.5rem', 
+            borderRadius: '10px',
+            border: `1px solid ${currentTheme.border}`,
+            boxShadow: `0 2px 8px ${currentTheme.shadow}`
+          }}>
+            <p style={{ marginBottom: '1rem', fontWeight: 'bold', color: currentTheme.primary }}>Architectural Wonder</p>
+            <p style={{ marginBottom: '1rem', color: currentTheme.text }}>
+              The church itself is a marvel of ancient engineering:
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0 }}>
+              <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'flex-start' }}>
+                <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>⛪</span>
+                <div style={{ color: currentTheme.text }}>
+                  <strong>Rock-Hewn Design</strong>: Entirely carved from <strong>living rock</strong>, with no external walls.
+                </div>
+              </li>
+              <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'flex-start' }}>
+                <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🎨</span>
+                <div style={{ color: currentTheme.text }}>
+                  <strong>Ancient Frescoes</strong>: Vibrant <strong>6th-century paintings</strong> depicting biblical scenes.
+                </div>
+              </li>
+              <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'flex-start' }}>
+                <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>📜</span>
+                <div style={{ color: currentTheme.text }}>
+                  <strong>Religious Artifacts</strong>: Ancient <strong>manuscripts and crosses</strong> preserved for centuries.
                 </div>
               </li>
             </ul>
@@ -103,57 +147,31 @@ const AbunaYemataGuhDetails = () => {
         </div>
 
         <div style={{ marginBottom: '2rem' }}>
-          <h3 style={{ color: '#8B4513', fontSize: '1.4rem', marginBottom: '1rem' }}>2. The Church Interior</h3>
+          <h3 style={{ color: currentTheme.primary, fontSize: '1.4rem', marginBottom: '1rem' }}>3. The Spiritual Experience</h3>
           <div style={{ 
-            background: '#fff', 
+            background: currentTheme.cardBackground, 
             padding: '1.5rem', 
             borderRadius: '10px',
-            border: '1px solid #e9ecef',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+            border: `1px solid ${currentTheme.border}`,
+            boxShadow: `0 2px 8px ${currentTheme.shadow}`
           }}>
             <ul style={{ listStyle: 'none', padding: 0 }}>
-              <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#8B4513', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🎨</span>
-                <div>
-                  <strong>Dome frescoes</strong> of the Nine Saints and 12 Apostles
+              <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'flex-start' }}>
+                <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🙏</span>
+                <div style={{ color: currentTheme.text }}>
+                  <strong>Prayer Services</strong>: Witness <strong>traditional Orthodox services</strong> in this ancient setting.
                 </div>
               </li>
-              <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#8B4513', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>📜</span>
-                <div>
-                  <strong>Ancient manuscripts</strong> sealed in leather pouches
+              <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'flex-start' }}>
+                <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🌅</span>
+                <div style={{ color: currentTheme.text }}>
+                  <strong>Panoramic Views</strong>: Marvel at <strong>360-degree vistas</strong> of the Tigray landscape.
                 </div>
               </li>
-              <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#8B4513', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🎵</span>
-                <div>
-                  <strong>Perfect acoustics</strong> for liturgical chanting
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div style={{ marginBottom: '2rem' }}>
-          <h3 style={{ color: '#8B4513', fontSize: '1.4rem', marginBottom: '1rem' }}>3. The View</h3>
-          <div style={{ 
-            background: '#fff', 
-            padding: '1.5rem', 
-            borderRadius: '10px',
-            border: '1px solid #e9ecef',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-          }}>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
-              <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#8B4513', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>👁️</span>
-                <div>
-                  <strong>Panorama</strong> across Tigray's sandstone formations
-                </div>
-              </li>
-              <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start' }}>
-                <span style={{ color: '#8B4513', marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>🌅</span>
-                <div>
-                  <strong>Sunrise services</strong> with light streaming through the entrance
+              <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'flex-start' }}>
+                <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem', marginTop: '2px' }}>☕</span>
+                <div style={{ color: currentTheme.text }}>
+                  <strong>Coffee Ceremony</strong>: Share in the <strong>traditional Ethiopian coffee ritual</strong> with local priests.
                 </div>
               </li>
             </ul>
@@ -162,73 +180,114 @@ const AbunaYemataGuhDetails = () => {
       </div>
 
       <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{ color: '#8B4513', fontSize: '1.8rem', marginBottom: '1rem' }}>🌍 Why This Challenges and Inspires</h2>
+        <h2 style={{ color: currentTheme.primary, fontSize: '1.8rem', marginBottom: '1rem' }}>🌍 Why Abuna Yemata Guh Belongs on Your Bucket List</h2>
         <div style={{ 
-          background: '#e8f5e8', 
+          background: currentTheme.surface, 
           padding: '1.5rem', 
           borderRadius: '10px',
-          border: '1px solid #28a745'
+          border: `1px solid ${currentTheme.accent}`
         }}>
           <ul style={{ listStyle: 'none', padding: 0 }}>
             <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#28a745', marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
-              <strong>Considered one of Christianity's most sacred sites</strong>
+              <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
+              <div style={{ color: currentTheme.text }}>
+                <strong>Unique Experience</strong> – One of the most challenging church visits in the world.
+              </div>
             </li>
             <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#28a745', marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
-              <strong>Frescoes rivaling Europe's finest medieval art</strong>
+              <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
+              <div style={{ color: currentTheme.text }}>
+                <strong>Ancient Art</strong> – Pristine 6th-century frescoes in their original setting.
+              </div>
             </li>
             <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#28a745', marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
-              <strong>Life-changing accomplishment</strong> for those who complete the climb
+              <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
+              <div style={{ color: currentTheme.text }}>
+                <strong>Adventure</strong> – Combine spiritual pilgrimage with physical challenge.
+              </div>
+            </li>
+            <li style={{ marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}>
+              <span style={{ color: currentTheme.accent, marginRight: '10px', fontSize: '1.2rem' }}>✔</span>
+              <div style={{ color: currentTheme.text }}>
+                <strong>Cultural Insight</strong> – Deep understanding of Ethiopian Orthodox traditions.
+              </div>
             </li>
           </ul>
         </div>
       </div>
 
       <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{ color: '#8B4513', fontSize: '1.8rem', marginBottom: '1rem' }}>⚠️ Essential Information</h2>
+        <h2 style={{ color: currentTheme.primary, fontSize: '1.8rem', marginBottom: '1rem' }}>📅 Best Time to Visit</h2>
         <div style={{ 
-          background: '#fff3cd', 
+          background: currentTheme.surface, 
           padding: '1.5rem', 
           borderRadius: '10px',
-          border: '1px solid #ffc107'
+          border: `1px solid ${currentTheme.accent}`
         }}>
           <div style={{ marginBottom: '1rem' }}>
-            <h3 style={{ color: '#856404', marginBottom: '0.5rem' }}>💪 Physical Requirement</h3>
-            <p><strong>Moderate fitness level</strong> needed</p>
-          </div>
-          <div style={{ marginBottom: '1rem' }}>
-            <h3 style={{ color: '#856404', marginBottom: '0.5rem' }}>🌤️ Best Time</h3>
-            <p><strong>October-February</strong> (cooler temperatures)</p>
+            <h3 style={{ color: currentTheme.primary, marginBottom: '0.5rem' }}>🌤️ Optimal Season</h3>
+            <p style={{ color: currentTheme.text }}>October–March (dry season). Avoid rainy season for safety.</p>
           </div>
           <div>
-            <h3 style={{ color: '#856404', marginBottom: '0.5rem' }}>👗 Dress Code</h3>
-            <p><strong>Shoulders/knees covered</strong> (scarves provided)</p>
+            <h3 style={{ color: currentTheme.primary, marginBottom: '0.5rem' }}>⚠️ Safety Considerations</h3>
+            <ul style={{ margin: 0, paddingLeft: '1.5rem', color: currentTheme.text }}>
+              <li><strong>Fitness Required</strong>: Good physical condition and no fear of heights.</li>
+              <li><strong>Weather Dependent</strong>: Climbing is not possible during rain or strong winds.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ marginBottom: '2rem' }}>
+        <h2 style={{ color: currentTheme.primary, fontSize: '1.8rem', marginBottom: '1rem' }}>🗺️ Suggested Itineraries</h2>
+        <div style={{ 
+          background: currentTheme.cardBackground, 
+          padding: '1.5rem', 
+          borderRadius: '10px',
+          border: `1px solid ${currentTheme.border}`,
+          boxShadow: `0 2px 8px ${currentTheme.shadow}`
+        }}>
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+            gap: '1rem' 
+          }}>
+            <div style={{ padding: '1rem', background: currentTheme.surface, borderRadius: '8px' }}>
+              <h4 style={{ color: currentTheme.primary, marginBottom: '0.5rem' }}><strong>1 Day</strong></h4>
+              <p style={{ color: currentTheme.text }}>Abuna Yemata Guh climb and visit</p>
+            </div>
+            <div style={{ padding: '1rem', background: currentTheme.surface, borderRadius: '8px' }}>
+              <h4 style={{ color: currentTheme.primary, marginBottom: '0.5rem' }}><strong>2 Days</strong></h4>
+              <p style={{ color: currentTheme.text }}>Add other Tigray rock churches</p>
+            </div>
+            <div style={{ padding: '1rem', background: currentTheme.surface, borderRadius: '8px' }}>
+              <h4 style={{ color: currentTheme.primary, marginBottom: '0.5rem' }}><strong>3 Days</strong></h4>
+              <p style={{ color: currentTheme.text }}>Complete Tigray cultural experience</p>
+            </div>
           </div>
         </div>
       </div>
 
       <div style={{ 
-        background: 'linear-gradient(135deg, #8B4513, #CD853F)', 
+        background: `linear-gradient(135deg, ${currentTheme.primary}, ${currentTheme.secondary})`, 
         color: 'white', 
         padding: '2rem', 
         borderRadius: '15px',
         textAlign: 'center',
         marginBottom: '2rem'
       }}>
-        <h2 style={{ marginBottom: '1rem' }}>🚀 Ready to Experience These Wonders?</h2>
+        <h2 style={{ marginBottom: '1rem' }}>⛪ Ready to Climb to the Church in the Sky?</h2>
         <p style={{ fontSize: '1.1rem', marginBottom: '1rem' }}>
-          <em>Shirsh Travel Agency specializes in seamless museum visits and spiritually significant adventures—from Addis Ababa's halls to Tigray's cliffs.</em>
+          <em>Let Shirsh Travel Agency guide you on this extraordinary spiritual and physical journey.</em>
         </p>
         <p style={{ fontSize: '0.9rem', opacity: '0.9' }}>
-          📞 Contact us today to book your spiritual adventure!
+          📞 Contact us today to book your cliff church adventure!
         </p>
       </div>
 
       <div style={{ textAlign: 'center' }}>
         <Link to="/tours" style={{
-          background: '#8B4513',
+          background: currentTheme.primary,
           color: 'white',
           padding: '1rem 2rem',
           borderRadius: '10px',
@@ -237,7 +296,7 @@ const AbunaYemataGuhDetails = () => {
           marginTop: '1rem',
           fontSize: '1.1rem',
           fontWeight: 'bold',
-          transition: 'background 0.3s ease'
+          transition: 'all 0.3s ease'
         }}>
           Back to Tours
         </Link>
