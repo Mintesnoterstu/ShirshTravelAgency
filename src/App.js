@@ -7,6 +7,17 @@ import About from './pages/About';
 import ToursPage from './pages/ToursPage';
 import ContactPage from './pages/ContactPage';
 import LalibelaDetails from './pages/LalibelaDetails';
+import AxumDetails from './pages/AxumDetails';
+import GondarDetails from './pages/GondarDetails';
+import SimienMountainsDetails from './pages/SimienMountainsDetails';
+import DanakilDepressionDetails from './pages/DanakilDepressionDetails';
+import OmoValleyDetails from './pages/OmoValleyDetails';
+import BlueNileFallsDetails from './pages/BlueNileFallsDetails';
+import TiyaDetails from './pages/TiyaDetails';
+import BaleMountainsDetails from './pages/BaleMountainsDetails';
+import HararDetails from './pages/HararDetails';
+import NationalMuseumDetails from './pages/NationalMuseumDetails';
+import AbunaYemataGuhDetails from './pages/AbunaYemataGuhDetails';
 import './App.css';
 
 function App() {
@@ -21,6 +32,17 @@ function App() {
             <Route path="/tours" element={<ToursPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/lalibela" element={<LalibelaDetails />} />
+            <Route path="/axum" element={<AxumDetails />} />
+            <Route path="/gondar" element={<GondarDetails />} />
+            <Route path="/simien-mountains" element={<SimienMountainsDetails />} />
+            <Route path="/danakil-depression" element={<DanakilDepressionDetails />} />
+            <Route path="/omo-valley" element={<OmoValleyDetails />} />
+            <Route path="/blue-nile-falls" element={<BlueNileFallsDetails />} />
+            <Route path="/tiya" element={<TiyaDetails />} />
+            <Route path="/bale-mountains" element={<BaleMountainsDetails />} />
+            <Route path="/harar" element={<HararDetails />} />
+            <Route path="/national-museum" element={<NationalMuseumDetails />} />
+            <Route path="/abuna-yemata-guh" element={<AbunaYemataGuhDetails />} />
           </Routes>
         </main>
         <Footer />
