@@ -18,12 +18,20 @@ import BaleMountainsDetails from './pages/BaleMountainsDetails';
 import HararDetails from './pages/HararDetails';
 import NationalMuseumDetails from './pages/NationalMuseumDetails';
 import AbunaYemataGuhDetails from './pages/AbunaYemataGuhDetails';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
 import './App.css';
 
-function App() {
+function AppContent() {
+  const { currentTheme } = useTheme();
+  
   return (
     <Router>
-      <div className="App">
+      <div className="App" style={{
+        backgroundColor: currentTheme.background,
+        color: currentTheme.text,
+        minHeight: '100vh',
+        transition: 'all 0.3s ease'
+      }}>
         <Navbar />
         <main>
           <Routes>
@@ -48,6 +56,14 @@ function App() {
         <Footer />
       </div>
     </Router>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 }
 
