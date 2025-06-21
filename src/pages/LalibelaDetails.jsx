@@ -14,22 +14,38 @@ const LalibelaDetails = () => {
       margin: '0 auto'
     }}>
       <div style={{ 
-        background: 'linear-gradient(135deg, #8B4513, #A0522D)', 
+        background: `linear-gradient(rgba(139, 69, 19, 0.8), rgba(205, 133, 63, 0.8)), url('https://assets.vogue.com/photos/5ac2ae2a022a720bbd098ef1/master/w_1920,c_limit/00-story-image-lalibela-ethiopia-is-the-next-machu-picchu.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         color: 'white', 
-        padding: '2rem', 
+        padding: '3rem 2rem', 
         borderRadius: '15px',
         marginBottom: '2rem',
-        boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+        boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+        minHeight: '300px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center'
       }}>
         <h1 style={{ 
           color: 'white', 
           fontSize: '2.5rem', 
           marginBottom: '1rem',
-          textAlign: 'center'
+          textAlign: 'center',
+          textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
         }}>
           Discover the Sacred Wonders of Lalibela
         </h1>
-        <p style={{ fontSize: '1.2rem', lineHeight: '1.6', textAlign: 'center' }}>
+        <p style={{ 
+          fontSize: '1.2rem', 
+          lineHeight: '1.6', 
+          textAlign: 'center',
+          maxWidth: '800px',
+          textShadow: '1px 1px 2px rgba(0,0,0,0.5)'
+        }}>
           Step into a world of ancient spirituality and architectural marvels in <strong>Lalibela</strong>, Ethiopia's most revered religious destination. Known as the "New Jerusalem," this UNESCO World Heritage Site is home to <strong>11 breathtaking rock-hewn churches</strong>, carved entirely out of solid rock in the 12th century under the reign of King Lalibela.
         </p>
       </div>
