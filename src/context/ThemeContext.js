@@ -13,7 +13,7 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
-    return savedTheme || 'default';
+    return savedTheme || 'light';
   });
 
   const themes = {
@@ -48,27 +48,11 @@ export const ThemeProvider = ({ children }) => {
       navbarText: '#ffffff',
       footerBackground: '#2d2d2d',
       footerText: '#ffffff'
-    },
-    default: {
-      name: 'default',
-      background: '#ffffff',
-      text: '#333333',
-      primary: '#8B4513',
-      secondary: '#A0522D',
-      accent: '#28a745',
-      surface: '#f8f9fa',
-      border: '#e9ecef',
-      shadow: 'rgba(0, 0, 0, 0.1)',
-      cardBackground: '#ffffff',
-      navbarBackground: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
-      navbarText: '#ffffff',
-      footerBackground: '#f8f9fa',
-      footerText: '#333333'
     }
   };
 
   const toggleTheme = () => {
-    const themeOrder = ['default', 'light', 'dark'];
+    const themeOrder = ['light', 'dark'];
     const currentIndex = themeOrder.indexOf(theme);
     const nextIndex = (currentIndex + 1) % themeOrder.length;
     const newTheme = themeOrder[nextIndex];
