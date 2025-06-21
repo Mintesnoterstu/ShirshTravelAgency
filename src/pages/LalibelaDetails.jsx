@@ -408,7 +408,7 @@ const LalibelaDetails = () => {
           </div>
         </div>
       </div>
-
+      
       <div style={{ 
         background: `linear-gradient(135deg, ${currentTheme.primary}, ${currentTheme.secondary})`, 
         color: 'white', 
@@ -427,20 +427,20 @@ const LalibelaDetails = () => {
       </div>
 
       <div style={{ textAlign: 'center' }}>
-        <Link to="/tours" style={{
+      <Link to="/tours" style={{
           background: currentTheme.primary,
-          color: 'white',
-          padding: '1rem 2rem',
-          borderRadius: '10px',
-          textDecoration: 'none',
-          display: 'inline-block',
+        color: 'white',
+        padding: '1rem 2rem',
+        borderRadius: '10px',
+        textDecoration: 'none',
+        display: 'inline-block',
           marginTop: '1rem',
           fontSize: '1.1rem',
           fontWeight: 'bold',
           transition: 'all 0.3s ease'
-        }}>
-          Back to Tours
-        </Link>
+      }}>
+        Back to Tours
+      </Link>
       </div>
     </div>
   );
