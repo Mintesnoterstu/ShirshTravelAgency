@@ -14,7 +14,7 @@ const LalibelaDetails = () => {
       margin: '0 auto'
     }}>
       <div style={{ 
-        background: `linear-gradient(rgba(139, 69, 19, 0.8), rgba(205, 133, 63, 0.8)), url('https://assets.vogue.com/photos/5ac2ae2a022a720bbd098ef1/master/w_1920,c_limit/00-story-image-lalibela-ethiopia-is-the-next-machu-picchu.jpg')`,
+        background: `linear-gradient(rgba(139, 69, 19, 0.5), rgba(205, 133, 63, 0.5)), url('https://assets.vogue.com/photos/5ac2ae2a022a720bbd098ef1/master/w_1920,c_limit/00-story-image-lalibela-ethiopia-is-the-next-machu-picchu.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -33,9 +33,10 @@ const LalibelaDetails = () => {
         <h1 style={{ 
           color: 'white', 
           fontSize: '2.5rem', 
+          //textShadow: '3px 3px 6px rgba(0, 0, 0, 0.97), 1px 1px 2px rgba(0, 0, 0, 0.89)',
           marginBottom: '1rem',
           textAlign: 'center',
-          textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.89)'
         }}>
           Discover the Sacred Wonders of Lalibela
         </h1>
@@ -43,8 +44,9 @@ const LalibelaDetails = () => {
           fontSize: '1.2rem', 
           lineHeight: '1.6', 
           textAlign: 'center',
+         //extShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 2px rgba(0,0,0,0.8)',
           maxWidth: '800px',
-          textShadow: '1px 1px 2px rgba(0,0,0,0.5)'
+          textShadow: '1px 1px 2px rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.89)'
         }}>
           Step into a world of ancient spirituality and architectural marvels in <strong>Lalibela</strong>, Ethiopia's most revered religious destination. Known as the "New Jerusalem," this UNESCO World Heritage Site is home to <strong>11 breathtaking rock-hewn churches</strong>, carved entirely out of solid rock in the 12th century under the reign of King Lalibela.
         </p>
@@ -87,7 +89,7 @@ const LalibelaDetails = () => {
           gap: '1rem' 
         }}>
           <div style={{ 
-            background: `linear-gradient(rgba(139, 69, 19, 0.8), rgba(205, 133, 63, 0.8)), url('https://media.istockphoto.com/id/2164800078/photo/church-of-saint-george-bete-giyorgis-lalibela-ethiopia-africa.jpg?s=2048x2048&w=is&k=20&c=okDGXDg56jcu4zVj5h0C1IHGT6BHm04f2S7dQsUobtc=')`,
+            background: `linear-gradient(rgba(139, 69, 19, 0.5), rgba(205, 133, 63, 0.5)), url('https://media.istockphoto.com/id/2164800078/photo/church-of-saint-george-bete-giyorgis-lalibela-ethiopia-africa.jpg?s=2048x2048&w=is&k=20&c=okDGXDg56jcu4zVj5h0C1IHGT6BHm04f2S7dQsUobtc=')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
@@ -104,17 +106,19 @@ const LalibelaDetails = () => {
             <h3 style={{ 
               color: 'white', 
               marginBottom: '0.5rem',
-              textShadow: '2px 2px 4px rgba(0,0,0,0.7)',
-              fontSize: '1.2rem'
+              textShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 2px rgba(0,0,0,0.8)',
+              fontSize: '1.2rem',
+              fontWeight: 'bold'
             }}>🔹 Bete Giyorgis (Church of St. George)</h3>
             <p style={{ 
               color: 'white',
-              textShadow: '1px 1px 2px rgba(0,0,0,0.7)',
-              margin: 0
+              textShadow: '2px 2px 4px rgba(0,0,0,0.9), 1px 1px 2px rgba(0,0,0,0.8)',
+              margin: 0,
+              fontWeight: '500'
             }}>The most iconic, cross-shaped church, perfectly carved into the rock.</p>
           </div>
           <div style={{ 
-            background: `linear-gradient(rgba(139, 69, 19, 0.8), rgba(205, 133, 63, 0.8)), url('https://media.istockphoto.com/id/1148806016/photo/bete-amanuel-church-in-lalibela-ethiopia.jpg?s=2048x2048&w=is&k=20&c=uXpF5l36xPoIgQgJNUVVOVqRdc3RcC0ZvyvONOAYbjA=')`,
+            background: `linear-gradient(rgba(139, 69, 19, 0.5), rgba(205, 133, 63, 0.5)), url('https://media.istockphoto.com/id/1148806016/photo/bete-amanuel-church-in-lalibela-ethiopia.jpg?s=2048x2048&w=is&k=20&c=uXpF5l36xPoIgQgJNUVVOVqRdc3RcC0ZvyvONOAYbjA=')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
@@ -131,44 +135,103 @@ const LalibelaDetails = () => {
             <h3 style={{ 
               color: 'white', 
               marginBottom: '0.5rem',
-              textShadow: '2px 2px 4px rgba(0,0,0,0.7)',
-              fontSize: '1.2rem'
+              textShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 2px rgba(0,0,0,0.8)',
+              fontSize: '1.2rem',
+              fontWeight: 'bold'
             }}>🔹 Bete Amanuel</h3>
             <p style={{ 
               color: 'white',
-              textShadow: '1px 1px 2px rgba(0,0,0,0.7)',
-              margin: 0
+              textShadow: '2px 2px 4px rgba(0,0,0,0.9), 1px 1px 2px rgba(0,0,0,0.8)',
+              margin: 0,
+              fontWeight: '500'
             }}>Believed to be the former royal chapel, known for its intricate exterior.</p>
           </div>
           <div style={{ 
-            background: '#fff', 
+            background: `linear-gradient(rgba(139, 69, 19, 0.5), rgba(205, 133, 63, 0.5)), url('https://images-cdn.bridgemanimages.com/api/1.0/image/600wm.XXX.7399150.7055475/516758.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
             padding: '1.5rem', 
             borderRadius: '10px',
             border: '1px solid #e9ecef',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+            boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+            minHeight: '200px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            position: 'relative'
           }}>
-            <h3 style={{ color: '#8B4513', marginBottom: '0.5rem' }}>🔹 Bete Medhane Alem</h3>
-            <p>The largest monolithic church in the world.</p>
+            <h3 style={{ 
+              color: 'white', 
+              marginBottom: '0.5rem',
+              textShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 2px rgba(0,0,0,0.8)',
+              fontSize: '1.2rem',
+              fontWeight: 'bold'
+            }}>🔹 Bete Medhane Alem</h3>
+            <p style={{ 
+              color: 'white',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.9), 1px 1px 2px rgba(0,0,0,0.8)',
+              margin: 0,
+              fontWeight: '500'
+            }}>The largest monolithic church in the world.</p>
           </div>
           <div style={{ 
-            background: '#fff', 
+            background: `linear-gradient(rgba(139, 69, 19, 0.5), rgba(205, 133, 63, 0.5)), url('https://holeinthedonut.com/wp-content/uploads/2018/05/Ethiopia-Bete-Maryam-in-northeastern-group-of-rock-hewn-churches-of-Lalibela.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
             padding: '1.5rem', 
             borderRadius: '10px',
             border: '1px solid #e9ecef',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+            boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+            minHeight: '200px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            position: 'relative'
           }}>
-            <h3 style={{ color: '#8B4513', marginBottom: '0.5rem' }}>🔹 Bete Maryam & Bete Golgotha</h3>
-            <p>Adorned with ancient frescoes and religious artifacts.</p>
+            <h3 style={{ 
+              color: 'white', 
+              marginBottom: '0.5rem',
+              textShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 2px rgba(0,0,0,0.8)',
+              fontSize: '1.2rem',
+              fontWeight: 'bold'
+            }}>🔹 Bete Maryam & Bete Golgotha</h3>
+            <p style={{ 
+              color: 'white',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.9), 1px 1px 2px rgba(0,0,0,0.8)',
+              margin: 0,
+              fontWeight: '500'
+            }}>Adorned with ancient frescoes and religious artifacts.</p>
           </div>
           <div style={{ 
-            background: '#fff', 
+            background: `linear-gradient(rgba(139, 69, 19, 0.5), rgba(205, 133, 63, 0.5)), url('https://therestlessroad.com/wp-content/uploads/2014/01/IMG_2639.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
             padding: '1.5rem', 
             borderRadius: '10px',
             border: '1px solid #e9ecef',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+            boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+            minHeight: '200px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            position: 'relative'
           }}>
-            <h3 style={{ color: '#8B4513', marginBottom: '0.5rem' }}>🔹 Asheten Mariam Monastery</h3>
-            <p>A scenic hike with panoramic views of Lalibela.</p>
+            <h3 style={{ 
+              color: 'white', 
+              marginBottom: '0.5rem',
+              textShadow: '3px 3px 6px rgba(0,0,0,0.9), 1px 1px 2px rgba(0,0,0,0.8)',
+              fontSize: '1.2rem',
+              fontWeight: 'bold'
+            }}>🔹 Asheten Mariam Monastery</h3>
+            <p style={{ 
+              color: 'white',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.9), 1px 1px 2px rgba(0,0,0,0.8)',
+              margin: 0,
+              fontWeight: '500'
+            }}>A scenic hike with panoramic views of Lalibela.</p>
           </div>
         </div>
       </div>
@@ -233,9 +296,9 @@ const LalibelaDetails = () => {
           </ul>
         </div>
       </div>
-
+      
       <div style={{ 
-        background: 'linear-gradient(135deg, #8B4513, #A0522D)', 
+        background: 'linear-gradient(135deg,rgba(139, 69, 19, 0.38),rgba(160, 81, 45, 0.53))', 
         color: 'white', 
         padding: '2rem', 
         borderRadius: '15px',
@@ -252,20 +315,20 @@ const LalibelaDetails = () => {
       </div>
 
       <div style={{ textAlign: 'center' }}>
-        <Link to="/tours" style={{
+      <Link to="/tours" style={{
           background: '#8B4513',
-          color: 'white',
-          padding: '1rem 2rem',
-          borderRadius: '10px',
-          textDecoration: 'none',
-          display: 'inline-block',
+        color: 'white',
+        padding: '1rem 2rem',
+        borderRadius: '10px',
+        textDecoration: 'none',
+        display: 'inline-block',
           marginTop: '1rem',
           fontSize: '1.1rem',
           fontWeight: 'bold',
           transition: 'background 0.3s ease'
-        }}>
-          Back to Tours
-        </Link>
+      }}>
+        Back to Tours
+      </Link>
       </div>
     </div>
   );
