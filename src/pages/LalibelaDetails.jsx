@@ -87,14 +87,58 @@ const LalibelaDetails = () => {
           gap: '1rem' 
         }}>
           <div style={{ 
-            background: '#fff', 
+            background: `linear-gradient(rgba(139, 69, 19, 0.8), rgba(205, 133, 63, 0.8)), url('https://media.istockphoto.com/id/2164800078/photo/church-of-saint-george-bete-giyorgis-lalibela-ethiopia-africa.jpg?s=2048x2048&w=is&k=20&c=okDGXDg56jcu4zVj5h0C1IHGT6BHm04f2S7dQsUobtc=')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
             padding: '1.5rem', 
             borderRadius: '10px',
             border: '1px solid #e9ecef',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+            boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+            minHeight: '200px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            position: 'relative'
           }}>
-            <h3 style={{ color: '#8B4513', marginBottom: '0.5rem' }}>🔹 Bete Giyorgis (Church of St. George)</h3>
-            <p>The most iconic, cross-shaped church, perfectly carved into the rock.</p>
+            <h3 style={{ 
+              color: 'white', 
+              marginBottom: '0.5rem',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.7)',
+              fontSize: '1.2rem'
+            }}>🔹 Bete Giyorgis (Church of St. George)</h3>
+            <p style={{ 
+              color: 'white',
+              textShadow: '1px 1px 2px rgba(0,0,0,0.7)',
+              margin: 0
+            }}>The most iconic, cross-shaped church, perfectly carved into the rock.</p>
+          </div>
+          <div style={{ 
+            background: `linear-gradient(rgba(139, 69, 19, 0.8), rgba(205, 133, 63, 0.8)), url('https://media.istockphoto.com/id/1148806016/photo/bete-amanuel-church-in-lalibela-ethiopia.jpg?s=2048x2048&w=is&k=20&c=uXpF5l36xPoIgQgJNUVVOVqRdc3RcC0ZvyvONOAYbjA=')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            padding: '1.5rem', 
+            borderRadius: '10px',
+            border: '1px solid #e9ecef',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+            minHeight: '200px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            position: 'relative'
+          }}>
+            <h3 style={{ 
+              color: 'white', 
+              marginBottom: '0.5rem',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.7)',
+              fontSize: '1.2rem'
+            }}>🔹 Bete Amanuel</h3>
+            <p style={{ 
+              color: 'white',
+              textShadow: '1px 1px 2px rgba(0,0,0,0.7)',
+              margin: 0
+            }}>Believed to be the former royal chapel, known for its intricate exterior.</p>
           </div>
           <div style={{ 
             background: '#fff', 
