@@ -12,6 +12,7 @@ const destinations = [
     name: 'Simien Mountains National Park',
     image: 'https://simienpark.org/wp-content/uploads/2017/10/simien-landscape-small.jpg',
     short: 'Dramatic cliffs, deep valleys, rare wildlife. UNESCO site.'
+    
   },
   {
     name: 'Danakil Depression',
