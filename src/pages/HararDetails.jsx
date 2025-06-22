@@ -17,7 +17,7 @@ const HararDetails = () => {
       transition: 'all 0.3s ease'
     }}>
       <div style={{ 
-        background: `linear-gradient(rgba(139, 69, 19, 0.5), rgba(205, 133, 63, 0.5)), url('https://as1.ftcdn.net/v2/jpg/04/81/01/08/1000_F_481010899_hDF8kx3A0TY0alVcbtSszeA8T5msbgaN.jpg')`,
+        background: `linear-gradient(rgba(255,140,0,0.5), rgba(255,255,255,0.2)), url('https://www.ethiosports.com/wp-content/uploads/2015/07/Harar-Wall.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

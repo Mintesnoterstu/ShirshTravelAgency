@@ -17,7 +17,7 @@ const NationalMuseumDetails = () => {
       transition: 'all 0.3s ease'
     }}>
       <div style={{ 
-        background: `linear-gradient(rgba(139, 69, 19, 0.5), rgba(205, 133, 63, 0.5)), url('https://as1.ftcdn.net/v2/jpg/04/81/01/08/1000_F_481010899_hDF8kx3A0TY0alVcbtSszeA8T5msbgaN.jpg')`,
+        background: `linear-gradient(rgba(30,60,114,0.5), rgba(42,82,152,0.5)), url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/b9/09/c9/national-museum.jpg?w=2000&h=-1&s=1')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -221,7 +221,7 @@ const NationalMuseumDetails = () => {
       </div>
 
       <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{ color: currentTheme.primary, fontSize: '1.8rem', marginBottom: '1rem' }}>�� Why This Museum Stands Apart</h2>
+        <h2 style={{ color: currentTheme.primary, fontSize: '1.8rem', marginBottom: '1rem' }}>Why This Museum Stands Apart</h2>
         <div style={{ 
           background: currentTheme.surface, 
           padding: '1.5rem', 
