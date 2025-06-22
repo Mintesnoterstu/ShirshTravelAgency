@@ -147,180 +147,203 @@ const ToursPage = () => {
           Explore the most remarkable places in Ethiopia. Click on destinations to learn more about their history, culture, and natural wonders.
         </p>
       </section>
+      
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-        gap: '2rem',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+        gap: '1.5rem',
         maxWidth: 1200,
         margin: '0 auto',
         padding: '0 2rem'
       }}>
-        {destinations.map((dest) => {
-          const CardContent = (
-            <div style={{
+        {destinations.map((dest) => (
+          <div 
+            key={dest.tourId}
+            style={{
               background: currentTheme.cardBackground,
-              borderRadius: 20,
+              borderRadius: '15px',
               boxShadow: `0 4px 16px ${currentTheme.shadow}`,
               overflow: 'hidden',
               transition: 'all 0.3s ease',
-              position: 'relative',
-              cursor: dest.link ? 'pointer' : 'default',
-              height: '450px',
+              border: `1px solid ${currentTheme.border}`,
+              height: '420px',
               display: 'flex',
               flexDirection: 'column',
-              border: `1px solid ${currentTheme.border}`
-            }} onMouseEnter={(e) => {
-              if (dest.link) {
-                e.currentTarget.style.transform = 'translateY(-5px)';
-                e.currentTarget.style.boxShadow = `0 8px 25px ${currentTheme.shadow}`;
-              }
-            }} onMouseLeave={(e) => {
-              if (dest.link) {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = `0 4px 16px ${currentTheme.shadow}`;
-              }
-            }}>
-              <img src={dest.image} alt={dest.name} style={{ 
-                width: '100%', 
-                height: '200px', 
-                objectFit: 'cover',
-                flexShrink: 0
-              }} />
-              <div style={{ 
-                padding: '1.5rem',
-                flex: 1,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between'
+              cursor: 'pointer'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px)';
+              e.currentTarget.style.boxShadow = `0 8px 25px ${currentTheme.shadow}`;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = `0 4px 16px ${currentTheme.shadow}`;
+            }}
+          >
+            {/* Image Section */}
+            <div style={{ position: 'relative', height: '180px', overflow: 'hidden' }}>
+              <img 
+                src={dest.image} 
+                alt={dest.name} 
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  objectFit: 'cover',
+                  transition: 'transform 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.transform = 'scale(1.05)';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.transform = 'scale(1)';
+                }}
+              />
+              <div style={{
+                position: 'absolute',
+                top: '0.75rem',
+                right: '0.75rem',
+                background: 'rgba(0,0,0,0.7)',
+                color: 'white',
+                padding: '0.4rem 0.8rem',
+                borderRadius: '15px',
+                fontSize: '0.85rem',
+                fontWeight: '600'
               }}>
-                <div>
-                  <h2 style={{ 
-                    color: currentTheme.primary, 
-                    fontSize: '1.3rem', 
-                    marginBottom: 8,
-                    lineHeight: '1.3',
-                    minHeight: '2.6rem',
-                    display: '-webkit-box',
-                    WebkitLineClamp: 2,
-                    WebkitBoxOrient: 'vertical',
-                    overflow: 'hidden'
-                  }}>{dest.name}</h2>
-                  <p style={{ 
-                    color: currentTheme.text, 
-                    fontSize: '1rem',
-                    lineHeight: '1.4',
-                    minHeight: '2.8rem',
-                    display: '-webkit-box',
-                    WebkitLineClamp: 2,
-                    WebkitBoxOrient: 'vertical',
-                    overflow: 'hidden',
-                    marginBottom: '1rem',
-                    opacity: 0.8
-                  }}>{dest.short}</p>
-                  
-                  {/* Booking Information */}
-                  <div style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    marginBottom: '1rem',
-                    padding: '0.5rem 0',
-                    borderTop: `1px solid ${currentTheme.border}`,
-                    borderBottom: `1px solid ${currentTheme.border}`
-                  }}>
-                    <div>
-                      <span style={{ 
-                        color: currentTheme.primary, 
-                        fontSize: '1.2rem', 
-                        fontWeight: 'bold' 
-                      }}>{dest.price}</span>
-                      <span style={{ 
-                        color: currentTheme.text, 
-                        fontSize: '0.9rem', 
-                        opacity: 0.7,
-                        marginLeft: '0.5rem'
-                      }}>per person</span>
-                    </div>
-                    <div style={{ 
-                      color: currentTheme.accent, 
-                      fontSize: '0.9rem', 
-                      fontWeight: '500' 
-                    }}>
-                      {dest.duration}
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Action Buttons */}
-                <div style={{
-                  display: 'flex',
-                  gap: '0.5rem',
-                  marginTop: 'auto'
-                }}>
-                  <Link 
-                    to={dest.link} 
-                    style={{
-                      flex: 1,
-                      padding: '0.75rem',
-                      backgroundColor: 'transparent',
-                      color: currentTheme.primary,
-                      border: `2px solid ${currentTheme.primary}`,
-                      borderRadius: '8px',
-                      textDecoration: 'none',
-                      textAlign: 'center',
-                      fontSize: '0.9rem',
-                      fontWeight: '500',
-                      transition: 'all 0.3s ease'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.target.style.backgroundColor = currentTheme.primary;
-                      e.target.style.color = 'white';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.backgroundColor = 'transparent';
-                      e.target.style.color = currentTheme.primary;
-                    }}
-                  >
-                    Learn More
-                  </Link>
-                  <Link 
-                    to="/booking" 
-                    onClick={() => handleBookNow(dest)}
-                    style={{
-                      flex: 1,
-                      padding: '0.75rem',
-                      backgroundColor: currentTheme.accent,
-                      color: 'white',
-                      border: `2px solid ${currentTheme.accent}`,
-                      borderRadius: '8px',
-                      textDecoration: 'none',
-                      textAlign: 'center',
-                      fontSize: '0.9rem',
-                      fontWeight: '500',
-                      transition: 'all 0.3s ease'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.target.style.backgroundColor = 'transparent';
-                      e.target.style.color = currentTheme.accent;
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.backgroundColor = currentTheme.accent;
-                      e.target.style.color = 'white';
-                    }}
-                  >
-                    Book Now
-                  </Link>
-                </div>
+                {dest.price}
               </div>
             </div>
-          );
 
-          return (
-            <div key={dest.name}>
-              {CardContent}
+            {/* Content Section */}
+            <div style={{ 
+              padding: '1.25rem',
+              flex: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between'
+            }}>
+              {/* Title and Description */}
+              <div>
+                <h2 style={{ 
+                  color: currentTheme.primary, 
+                  fontSize: '1.2rem', 
+                  marginBottom: '0.5rem',
+                  lineHeight: '1.3',
+                  fontWeight: '600',
+                  minHeight: '2.4rem',
+                  display: '-webkit-box',
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden'
+                }}>
+                  {dest.name}
+                </h2>
+                
+                <p style={{ 
+                  color: currentTheme.text, 
+                  fontSize: '0.9rem',
+                  lineHeight: '1.4',
+                  marginBottom: '1rem',
+                  opacity: 0.8,
+                  display: '-webkit-box',
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden',
+                  minHeight: '2.5rem'
+                }}>
+                  {dest.short}
+                </p>
+
+                {/* Duration Badge */}
+                <div style={{
+                  display: 'inline-block',
+                  background: currentTheme.accent,
+                  color: 'white',
+                  padding: '0.4rem 0.8rem',
+                  borderRadius: '12px',
+                  fontSize: '0.8rem',
+                  fontWeight: '500',
+                  marginBottom: '1rem'
+                }}>
+                  ⏱️ {dest.duration}
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div style={{
+                display: 'flex',
+                gap: '0.5rem',
+                marginTop: 'auto'
+              }}>
+                <Link 
+                  to={dest.link} 
+                  style={{
+                    flex: 1,
+                    padding: '0.75rem',
+                    backgroundColor: 'transparent',
+                    color: currentTheme.primary,
+                    border: `2px solid ${currentTheme.primary}`,
+                    borderRadius: '8px',
+                    textDecoration: 'none',
+                    textAlign: 'center',
+                    fontSize: '0.9rem',
+                    fontWeight: '600',
+                    transition: 'all 0.3s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.3rem'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = currentTheme.primary;
+                    e.target.style.color = 'white';
+                    e.target.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = 'transparent';
+                    e.target.style.color = currentTheme.primary;
+                    e.target.style.transform = 'translateY(0)';
+                  }}
+                >
+                  📖 Learn More
+                </Link>
+                
+                <Link 
+                  to="/booking" 
+                  onClick={() => handleBookNow(dest)}
+                  style={{
+                    flex: 1,
+                    padding: '0.75rem',
+                    backgroundColor: currentTheme.accent,
+                    color: 'white',
+                    border: `2px solid ${currentTheme.accent}`,
+                    borderRadius: '8px',
+                    textDecoration: 'none',
+                    textAlign: 'center',
+                    fontSize: '0.9rem',
+                    fontWeight: '600',
+                    transition: 'all 0.3s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.3rem'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = 'transparent';
+                    e.target.style.color = currentTheme.accent;
+                    e.target.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = currentTheme.accent;
+                    e.target.style.color = 'white';
+                    e.target.style.transform = 'translateY(0)';
+                  }}
+                >
+                  ✈️ Book Now
+                </Link>
+              </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );
