@@ -17,16 +17,16 @@ const SimienMountainsDetails = () => {
       transition: 'all 0.3s ease'
     }}>
       <div style={{ 
-        background: `linear-gradient(rgba(30,60,114,0.5), rgba(42,82,152,0.5)), url('https://simienpark.org/wp-content/uploads/2017/10/simien-landscape-small.jpg')`,
+        background: `linear-gradient(rgba(34,139,34,0.5), rgba(255,255,255,0.2)), url('https://simienpark.org/wp-content/uploads/2017/10/simien-landscape-small.jpg')`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
         color: 'white', 
-        padding: '3rem 2rem', 
-        borderRadius: '15px',
+        padding: '4rem 2rem', 
+        borderRadius: '24px',
         marginBottom: '2rem',
         boxShadow: `0 4px 15px ${currentTheme.shadow}`,
-        minHeight: '300px',
+        minHeight: '380px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
