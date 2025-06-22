@@ -1,16 +1,18 @@
-# Ethiopian Travel Agency Website
+# Shirshr Travel Agency Website
 
-A modern, responsive website for an Ethiopian travel agency showcasing the country's rich cultural heritage, stunning landscapes, and authentic travel experiences.
+A modern, responsive website for an Shirshr Travel Agency showcasing the country's rich cultural heritage, stunning landscapes, and authentic travel experiences.
 
 ## 🌟 Features
 
 ### Core Functionality
+
 - **Responsive Design**: Fully responsive across all devices (mobile, tablet, desktop)
 - **Modern UI/UX**: Beautiful, intuitive interface with smooth animations
 - **Multi-page Navigation**: Home, About, Tours, and Contact pages
 - **Interactive Components**: Hero sections, testimonials, tour filters, and contact forms
 
 ### Key Components
+
 - **Hero Section**: Stunning landing page with call-to-action buttons
 - **Destinations Showcase**: Interactive cards featuring Ethiopia's top destinations
 - **Tour Packages**: Filterable tour listings with detailed information
@@ -19,6 +21,7 @@ A modern, responsive website for an Ethiopian travel agency showcasing the count
 - **Responsive Navigation**: Mobile-friendly navigation with hamburger menu
 
 ### Technical Features
+
 - **React Router**: Client-side routing for smooth navigation
 - **Styled Components**: CSS-in-JS for component-specific styling
 - **Form Validation**: Formik and Yup for robust form handling
@@ -28,23 +31,27 @@ A modern, responsive website for an Ethiopian travel agency showcasing the count
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js (version 14 or higher)
 - npm or yarn package manager
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/yourusername/ethiopian-travel-agency.git
    cd ethiopian-travel-agency
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start the development server**
+
    ```bash
    npm start
    ```
@@ -94,6 +101,7 @@ ethiopian-travel-agency/
 ## 🎨 Design System
 
 ### Color Palette
+
 - **Primary**: #1e3c72 (Deep Blue)
 - **Secondary**: #2a5298 (Medium Blue)
 - **Accent**: #ffd700 (Gold)
@@ -103,10 +111,12 @@ ethiopian-travel-agency/
 - **Light Gray**: #f8f9fa
 
 ### Typography
+
 - **Primary Font**: Inter (Google Fonts)
 - **Fallback**: Segoe UI, Tahoma, Geneva, Verdana, sans-serif
 
 ### Components
+
 - **Cards**: Rounded corners (20px), subtle shadows
 - **Buttons**: Gradient backgrounds, hover animations
 - **Forms**: Clean inputs with focus states
@@ -115,11 +125,13 @@ ethiopian-travel-agency/
 ## 📱 Responsive Design
 
 The website is fully responsive with breakpoints at:
+
 - **Mobile**: < 768px
 - **Tablet**: 768px - 1024px
 - **Desktop**: > 1024px
 
 ### Mobile Features
+
 - Collapsible navigation menu
 - Touch-friendly buttons and forms
 - Optimized image loading
@@ -135,6 +147,7 @@ The website is fully responsive with breakpoints at:
 ## 📦 Dependencies
 
 ### Core Dependencies
+
 ```json
 {
   "react": "^19.1.0",
@@ -150,6 +163,7 @@ The website is fully responsive with breakpoints at:
 ## 🌍 Content
 
 ### Destinations Featured
+
 - **Lalibela Rock Churches**: UNESCO World Heritage site
 - **Simien Mountains**: Dramatic landscapes and wildlife
 - **Aksum**: Ancient city with historical significance
@@ -158,6 +172,7 @@ The website is fully responsive with breakpoints at:
 - **Bale Mountains**: Wildlife and alpine scenery
 
 ### Tour Categories
+
 - **Cultural Tours**: Historical sites and cultural experiences
 - **Adventure Tours**: Trekking and outdoor activities
 - **Wildlife Tours**: Nature and wildlife viewing
@@ -165,11 +180,13 @@ The website is fully responsive with breakpoints at:
 ## 🔒 Security & Performance
 
 ### Security Features
+
 - Form validation and sanitization
 - Secure routing
 - XSS protection through React's built-in security
 
 ### Performance Optimizations
+
 - Lazy loading of images
 - Optimized bundle size
 - Efficient component rendering
@@ -178,11 +195,13 @@ The website is fully responsive with breakpoints at:
 ## 🚀 Deployment
 
 ### Build for Production
+
 ```bash
 npm run build
 ```
 
 ### Deployment Options
+
 - **Netlify**: Drag and drop the `build` folder
 - **Vercel**: Connect your GitHub repository
 - **AWS S3**: Upload the `build` folder to S3
@@ -209,6 +228,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 For support and questions:
+
 - **Email**: info@ethiopiantravel.com
 - **Phone**: +251 911 123 456
 - **Website**: https://ethiopiantravel.com
@@ -216,6 +236,7 @@ For support and questions:
 ## 🔮 Future Enhancements
 
 ### Phase 2 Features
+
 - [ ] User authentication and accounts
 - [ ] Online booking system
 - [ ] Payment integration
@@ -225,6 +246,7 @@ For support and questions:
 - [ ] Admin dashboard
 
 ### Phase 3 Features
+
 - [ ] Mobile app development
 - [ ] Advanced booking management
 - [ ] Customer review system

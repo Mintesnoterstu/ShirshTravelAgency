@@ -1,6 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import { FaQuoteLeft, FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import {
+  FaQuoteLeft,
+  FaStar,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
 
 const TestimonialsSection = styled.section`
   padding: 5rem 2rem;
@@ -48,13 +53,13 @@ const TestimonialCard = styled.div`
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
-  opacity: ${props => props.active ? 1 : 0};
-  transform: ${props => props.active ? 'scale(1)' : 'scale(0.9)'};
-  position: ${props => props.active ? 'relative' : 'absolute'};
+  opacity: ${(props) => (props.active ? 1 : 0)};
+  transform: ${(props) => (props.active ? "scale(1)" : "scale(0.9)")};
+  position: ${(props) => (props.active ? "relative" : "absolute")};
   top: 0;
   left: 0;
   right: 0;
-  z-index: ${props => props.active ? 2 : 1};
+  z-index: ${(props) => (props.active ? 2 : 1)};
 
   @media (max-width: 768px) {
     padding: 2rem 1rem;
@@ -155,12 +160,14 @@ const Dot = styled.button`
   height: 12px;
   border-radius: 50%;
   border: none;
-  background: ${props => props.active ? '#ffd700' : 'rgba(255, 255, 255, 0.3)'};
+  background: ${(props) =>
+    props.active ? "#ffd700" : "rgba(255, 255, 255, 0.3)"};
   cursor: pointer;
   transition: all 0.3s ease;
 
   &:hover {
-    background: ${props => props.active ? '#ffd700' : 'rgba(255, 255, 255, 0.5)'};
+    background: ${(props) =>
+      props.active ? "#ffd700" : "rgba(255, 255, 255, 0.5)"};
   }
 `;
 
@@ -170,49 +177,49 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      text: "Our trip to Lalibela was absolutely incredible! The rock churches were breathtaking and our guide was incredibly knowledgeable. The Ethiopian Travel Agency made everything seamless from start to finish.",
+      text: "Our trip to Lalibela was absolutely incredible! The rock churches were breathtaking and our guide was incredibly knowledgeable. The Shirshr Travel Agency made everything seamless from start to finish.",
       name: "Sarah Johnson",
       location: "United States",
-      rating: 5
+      rating: 5,
     },
     {
       id: 2,
       text: "The Simien Mountains trek exceeded all expectations. The landscapes were stunning and we saw so much wildlife. The camping experience was comfortable and the guides were professional and friendly.",
       name: "Michael Chen",
       location: "Canada",
-      rating: 5
+      rating: 5,
     },
     {
       id: 3,
       text: "As a solo traveler, I was initially nervous about visiting Ethiopia, but this agency made me feel safe and welcome throughout my entire journey. The cultural experiences were authentic and unforgettable.",
       name: "Emma Rodriguez",
       location: "Spain",
-      rating: 5
+      rating: 5,
     },
     {
       id: 4,
       text: "The Danakil Depression was like visiting another planet! The colors, the heat, the sulfur springs - everything was incredible. Our safety was always the priority and the experience was well-organized.",
       name: "David Thompson",
       location: "Australia",
-      rating: 5
+      rating: 5,
     },
     {
       id: 5,
       text: "We learned so much about Ethiopian coffee culture and history. The traditional ceremonies were beautiful and the local people were so welcoming. This tour gave us a deep appreciation for Ethiopian culture.",
       name: "Lisa Wang",
       location: "Singapore",
-      rating: 5
-    }
+      rating: 5,
+    },
   ];
 
   const nextTestimonial = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
     );
   };
@@ -236,21 +243,23 @@ const Testimonials = () => {
         <SectionHeader>
           <SectionTitle>What Our Travelers Say</SectionTitle>
           <SectionSubtitle>
-            Hear from our satisfied customers about their unforgettable experiences in Ethiopia
+            Hear from our satisfied customers about their unforgettable
+            experiences in Ethiopia
           </SectionSubtitle>
         </SectionHeader>
 
         <TestimonialsContainer>
           {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={testimonial.id} active={index === currentIndex}>
+            <TestimonialCard
+              key={testimonial.id}
+              active={index === currentIndex}
+            >
               <QuoteIcon>
                 <FaQuoteLeft />
               </QuoteIcon>
-              
-              <TestimonialText>
-                "{testimonial.text}"
-              </TestimonialText>
-              
+
+              <TestimonialText>"{testimonial.text}"</TestimonialText>
+
               <CustomerInfo>
                 <CustomerName>{testimonial.name}</CustomerName>
                 <CustomerLocation>{testimonial.location}</CustomerLocation>
@@ -287,4 +296,4 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials; 
+export default Testimonials;

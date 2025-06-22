@@ -26,8 +26,8 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const goToPrev = () => setHeroIndex((prev) => (prev - 1 + heroImages.length) % heroImages.length);
-  const goToNext = () => setHeroIndex((prev) => (prev + 1) % heroImages.length);
+  // const goToPrev = () => setHeroIndex((prev) => (prev - 1 + heroImages.length) % heroImages.length);
+  // const goToNext = () => setHeroIndex((prev) => (prev + 1) % heroImages.length);
 
   const featuredDestinations = [
     {
