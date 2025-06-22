@@ -5,7 +5,7 @@ const About = () => {
     <div style={{ paddingTop: '80px' }}>
       {/* Hero Section */}
       <section style={{
-        background: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80")',
+        background: `linear-gradient(rgba(30,60,114,0.7), rgba(42,82,152,0.7)), url('https://ec.europa.eu/eurostat/documents/747990/17157919/Davide_Angelini_AdobeStock_437556662_RV.jpg/ecb23e13-0be4-354d-f4a8-25c0ff17d413?t=1689325477418')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         color: 'white',

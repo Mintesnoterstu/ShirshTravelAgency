@@ -17,7 +17,7 @@ const AbunaYemataGuhDetails = () => {
       transition: 'all 0.3s ease'
     }}>
       <div style={{ 
-        background: `linear-gradient(rgba(139, 69, 19, 0.5), rgba(205, 133, 63, 0.5)), url('https://as1.ftcdn.net/v2/jpg/04/81/01/08/1000_F_481010899_hDF8kx3A0TY0alVcbtSszeA8T5msbgaN.jpg')`,
+        background: `linear-gradient(rgba(139, 69, 19, 0.5), rgba(205, 133, 63, 0.5)), url('https://media.gettyimages.com/id/1225374767/photo/orthodox-priest-at-abuna-yemata-guh-church-aerial-view-tigray-ethiopia.jpg?s=2048x2048&w=gi&k=20&c=8IYDSPGZu7qdGpPH9wn7VUZriiHyjggPEDJyXqHkYeI=')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
