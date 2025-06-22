@@ -3,14 +3,15 @@ import { Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 
 const heroImages = [
-  'https://www.shadowsofafrica.com/media/wysiwyg/Itineraries/Ethiopia_The_Danakil_Depression/Erta_ale_red_lava_lake.jpg',
-  'https://www.shadowsofafrica.com/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/s/h/shutterstock_374183713.jpg',
-  'https://www.shadowsofafrica.com/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/s/h/shutterstock_374639497.jpg',
-  'https://clubrunner.blob.core.windows.net/00000060074/Images/Addis-Ababa-2022.png',
-  'https://cdn.shortpixel.ai/spai/q_glossy+w_900+to_webp+ret_img/recommend.com/wp-content/uploads/2017/03/ETH_2015_DK_068.jpg',
-  'https://cdn.shortpixel.ai/spai/q_glossy+w_900+to_webp+ret_img/recommend.com/wp-content/uploads/2017/03/ETH_2015_DK_052.jpg',
-  'https://media.gettyimages.com/id/1225374767/photo/orthodox-priest-at-abuna-yemata-guh-church-aerial-view-tigray-ethiopia.jpg?s=2048x2048&w=gi&k=20&c=8IYDSPGZu7qdGpPH9wn7VUZriiHyjggPEDJyXqHkYeI=',
-  'https://media.gettyimages.com/id/1225376184/photo/orthodox-priest-holding-the-hand-cross-abuna-yemata-guh-church-tigray-ethiopia.jpg?s=2048x2048&w=gi&k=20&c=TXBVjkrStHwKQfdrujbG2gwO6IUAoA0simHCErDoBjA='
+  "https://mediaim.expedia.com/destination/1/f4ef6768115c9e926215eb4b875bc42f.jpg",
+  // 'https://www.shadowsofafrica.com/media/wysiwyg/Itineraries/Ethiopia_The_Danakil_Depression/Erta_ale_red_lava_lake.jpg',
+  // 'https://www.shadowsofafrica.com/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/s/h/shutterstock_374183713.jpg',
+  // 'https://www.shadowsofafrica.com/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/s/h/shutterstock_374639497.jpg',
+  // 'https://clubrunner.blob.core.windows.net/00000060074/Images/Addis-Ababa-2022.png',
+  // 'https://cdn.shortpixel.ai/spai/q_glossy+w_900+to_webp+ret_img/recommend.com/wp-content/uploads/2017/03/ETH_2015_DK_068.jpg',
+  // 'https://cdn.shortpixel.ai/spai/q_glossy+w_900+to_webp+ret_img/recommend.com/wp-content/uploads/2017/03/ETH_2015_DK_052.jpg',
+  // 'https://media.gettyimages.com/id/1225374767/photo/orthodox-priest-at-abuna-yemata-guh-church-aerial-view-tigray-ethiopia.jpg?s=2048x2048&w=gi&k=20&c=8IYDSPGZu7qdGpPH9wn7VUZriiHyjggPEDJyXqHkYeI=',
+  // 'https://media.gettyimages.com/id/1225376184/photo/orthodox-priest-holding-the-hand-cross-abuna-yemata-guh-church-tigray-ethiopia.jpg?s=2048x2048&w=gi&k=20&c=TXBVjkrStHwKQfdrujbG2gwO6IUAoA0simHCErDoBjA='
 ];
 
 const Home = () => {
@@ -100,15 +101,16 @@ const Home = () => {
     <div style={{ 
       background: currentTheme.background,
       color: currentTheme.text,
+      margin: '0 auto',
       minHeight: '100vh'
     }}>
       {/* Hero Section */}
       <section style={{
-        background: `linear-gradient(135deg, rgba(30,60,114,0.6), rgba(42,82,152,0.6)), url('${heroImages[heroIndex]}')`,
+        background: `linear-gradient(135deg, rgba(30,60,114,0.5), rgba(42,82,152,0.5)), url('${heroImages[heroIndex]}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
-        minHeight: '100vh',
+        minHeight: '70vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -117,39 +119,9 @@ const Home = () => {
         padding: '2rem',
         paddingTop: '100px',
         position: 'relative',
-        transition: 'background-image 0.7s cubic-bezier(0.4,0,0.2,1)'
+        transition: 'background-image 0.7s cubic-bezier(0.4,0,0.3,1)'
       }}>
-        {/* Slideshow Arrows */}
-        <button onClick={goToPrev} aria-label="Previous" style={{
-          position: 'absolute',
-          left: 20,
-          top: '50%',
-          transform: 'translateY(-50%)',
-          background: 'rgba(0,0,0,0.3)',
-          border: 'none',
-          color: 'white',
-          fontSize: '2.5rem',
-          borderRadius: '50%',
-          width: 48,
-          height: 48,
-          cursor: 'pointer',
-          zIndex: 2
-        }}>&#8592;</button>
-        <button onClick={goToNext} aria-label="Next" style={{
-          position: 'absolute',
-          right: 20,
-          top: '50%',
-          transform: 'translateY(-50%)',
-          background: 'rgba(0,0,0,0.3)',
-          border: 'none',
-          color: 'white',
-          fontSize: '2.5rem',
-          borderRadius: '50%',
-          width: 48,
-          height: 48,
-          cursor: 'pointer',
-          zIndex: 2
-        }}>&#8594;</button>
+        
         <div style={{ maxWidth: '800px', background: 'rgba(0,0,0,0.25)', borderRadius: 24, padding: '2.5rem 2rem', boxShadow: '0 8px 32px rgba(0,0,0,0.18)' }}>
           <h1 style={{ 
             fontSize: '3.5rem', 
