@@ -192,7 +192,7 @@ const Contact = () => {
                   lineHeight: 1.4,
                   opacity: 0.8
                 }}>
-                  +251 911 123 456
+                  +251 987 950 887
                 </p>
               </div>
             </div>
@@ -233,7 +233,7 @@ const Contact = () => {
                   lineHeight: 1.4,
                   opacity: 0.8
                 }}>
-                  info@ethiopiantravel.com
+                  teklemintesnot2gmail.com
                 </p>
               </div>
             </div>
