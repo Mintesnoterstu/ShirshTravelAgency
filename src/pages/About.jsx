@@ -1,4 +1,5 @@
 import React from "react";
+import { BiBold } from "react-icons/bi";
 
 const About = () => {
   return (
@@ -47,7 +48,7 @@ const About = () => {
               <h3
                 style={{
                   fontSize: "2rem",
-                  color: "#1e3c72",
+                  color: "#0610e9",
                   marginBottom: "1.5rem",
                 }}
               >
@@ -55,9 +56,10 @@ const About = () => {
               </h3>
               <p
                 style={{
-                  fontSize: "1.1rem",
+                  fontSize: "1.3rem",
                   lineHeight: 1.8,
-                  color: "#666",
+                  fontWeight: "bold",
+                  color: "#a06c70",
                   marginBottom: "1rem",
                 }}
               >
@@ -67,9 +69,10 @@ const About = () => {
               </p>
               <p
                 style={{
-                  fontSize: "1.1rem",
+                  fontSize: "1.3rem",
                   lineHeight: 1.8,
-                  color: "#666",
+                  fontWeight: "bold",
+                  color: "#a06c70",
                   marginBottom: "1rem",
                 }}
               >
@@ -79,9 +82,10 @@ const About = () => {
               </p>
               <p
                 style={{
-                  fontSize: "1.1rem",
+                  fontSize: "1.3rem",
+                  fontWeight: "bold",
                   lineHeight: 1.8,
-                  color: "#666",
+                  color: "#a06c70",
                   marginBottom: "1rem",
                 }}
               >
@@ -95,7 +99,7 @@ const About = () => {
               style={{
                 height: "400px",
                 background:
-                  'url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80")',
+                  'url("https://mailmktg.makemytrip.com/mybusiness/images/CTM-2.jpg")',
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 borderRadius: "20px",
@@ -108,7 +112,7 @@ const About = () => {
           <h2
             style={{
               fontSize: "2.5rem",
-              color: "#1e3c72",
+              color: "#0610e9",
               textAlign: "center",
               marginBottom: "3rem",
             }}
@@ -125,11 +129,11 @@ const About = () => {
           >
             <div
               style={{
-                background: "white",
+                background: "#ffbc70",
                 padding: "2rem",
                 borderRadius: "20px",
                 textAlign: "center",
-                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
               }}
             >
               <h3
@@ -148,11 +152,11 @@ const About = () => {
             </div>
             <div
               style={{
-                background: "white",
+                background: "#ffbc70",
                 padding: "2rem",
                 borderRadius: "20px",
                 textAlign: "center",
-                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
               }}
             >
               <h3
@@ -171,11 +175,11 @@ const About = () => {
             </div>
             <div
               style={{
-                background: "white",
+                background: "#ffbc70",
                 padding: "2rem",
                 borderRadius: "20px",
                 textAlign: "center",
-                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
               }}
             >
               <h3
