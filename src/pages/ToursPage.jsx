@@ -498,7 +498,8 @@ const ToursPage = () => {
         gap: '1.5rem',
         maxWidth: 1200,
         margin: '0 auto',
-        padding: '0 2rem'
+        padding: '0 2rem',
+        marginBottom: '2rem'
       }}>
         {filteredDestinations.map((dest) => (
           <div 
