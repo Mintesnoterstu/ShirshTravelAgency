@@ -137,7 +137,7 @@ const destinations = [
   },
   {
     name: 'Abuna Yemata Guh (Tigray)',
-    image: 'https://images.westend61.de/0001440020pw/priest-holding-the-hand-cross-on-rocks-outside-abuna-yemata-guh-church-gheralta-mountains-tigray-region-ethiopia-africa-RHPLF17382.jpg',
+    image: 'https://media.gettyimages.com/id/1225374767/photo/orthodox-priest-at-abuna-yemata-guh-church-aerial-view-tigray-ethiopia.jpg?s=2048x2048&w=gi&k=20&c=8IYDSPGZu7qdGpPH9wn7VUZriiHyjggPEDJyXqHkYeI=',
     short: 'Cliff church. 6th-century. Epic climb, ancient frescoes, Gheralta views.',
     link: '/abuna-yemata-guh',
     price: '$320',
@@ -450,36 +450,6 @@ const ToursPage = () => {
                 <option value="Afar">Afar</option>
                 <option value="Harari">Harari</option>
                 <option value="Addis Ababa">Addis Ababa</option>
-              </select>
-            </div>
-
-            {/* Sort By */}
-            <div>
-              <label style={{
-                display: 'block',
-                color: currentTheme.text,
-                marginBottom: '0.5rem',
-                fontWeight: '500'
-              }}>
-                📊 Sort By
-              </label>
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                style={{
-                  width: '100%',
-                  padding: '0.75rem',
-                  border: `1px solid ${currentTheme.border}`,
-                  borderRadius: '8px',
-                  backgroundColor: currentTheme.background,
-                  color: currentTheme.text,
-                  fontSize: '0.9rem'
-                }}
-              >
-                <option value="name">Name (A-Z)</option>
-                <option value="price-low">Price (Low to High)</option>
-                <option value="price-high">Price (High to Low)</option>
-                <option value="duration">Duration</option>
               </select>
             </div>
           </div>

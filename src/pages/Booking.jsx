@@ -114,19 +114,19 @@ const Booking = () => {
           alignItems: 'start'
         }}>
           {/* Tour Summary */}
-          <div style={{
-            background: currentTheme.surface,
-            padding: '2rem',
+        <div style={{
+          background: currentTheme.surface,
+          padding: '2rem',
             borderRadius: '20px',
-            border: `1px solid ${currentTheme.border}`,
+          border: `1px solid ${currentTheme.border}`,
             boxShadow: `0 8px 25px ${currentTheme.shadow}`,
             height: 'fit-content',
             position: 'sticky',
             top: '120px'
-          }}>
-            <h2 style={{ 
-              color: currentTheme.primary, 
-              fontSize: '1.8rem', 
+        }}>
+          <h2 style={{ 
+            color: currentTheme.primary, 
+            fontSize: '1.8rem', 
               marginBottom: '1.5rem',
               textAlign: 'center'
             }}>
@@ -166,7 +166,7 @@ const Booking = () => {
               background: currentTheme.background,
               padding: '1.5rem',
               borderRadius: '15px',
-              marginBottom: '1.5rem'
+            marginBottom: '1.5rem' 
             }}>
               <h4 style={{ 
                 color: currentTheme.primary, 
@@ -259,7 +259,7 @@ const Booking = () => {
               textAlign: 'center'
             }}>
               Personal Information
-            </h2>
+          </h2>
             <form onSubmit={handleSubmit}>
               {/* Personal Information Section */}
               <div style={{

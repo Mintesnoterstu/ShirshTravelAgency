@@ -84,15 +84,15 @@ const Home = () => {
         background: `linear-gradient(135deg, rgba(30,60,114,0.9), rgba(42,82,152,0.9)), url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
+      minHeight: '100vh', 
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center',
         color: 'white',
-        padding: '2rem',
+      padding: '2rem',
         paddingTop: '100px'
-      }}>
+    }}>
         <div style={{ maxWidth: '800px' }}>
           <h1 style={{ 
             fontSize: '3.5rem', 
@@ -100,8 +100,8 @@ const Home = () => {
             fontWeight: '700',
             textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
           }}>
-            Discover Ethiopia
-          </h1>
+          Discover Ethiopia
+        </h1>
           <p style={{ 
             fontSize: '1.3rem', 
             marginBottom: '2.5rem',
@@ -457,13 +457,13 @@ const Home = () => {
             justifyContent: 'center',
             flexWrap: 'wrap'
           }}>
-            <Link to="/tours" style={{
+        <Link to="/tours" style={{
               background: 'white',
               color: currentTheme.primary,
-              padding: '1rem 2rem',
-              border: 'none',
-              borderRadius: '25px',
-              fontSize: '1.1rem',
+          padding: '1rem 2rem',
+          border: 'none',
+          borderRadius: '25px',
+          fontSize: '1.1rem',
               fontWeight: '600',
               cursor: 'pointer',
               textDecoration: 'none',
@@ -485,7 +485,7 @@ const Home = () => {
               borderRadius: '25px',
               fontSize: '1.1rem',
               fontWeight: '600',
-              cursor: 'pointer',
+          cursor: 'pointer',
               textDecoration: 'none',
               transition: 'all 0.3s ease'
             }}
@@ -498,8 +498,8 @@ const Home = () => {
               e.target.style.color = 'white';
             }}>
               📞 Contact Us
-            </Link>
-          </div>
+        </Link>
+      </div>
         </div>
       </section>
     </div>
