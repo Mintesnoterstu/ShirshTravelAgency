@@ -221,7 +221,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Team
 
-- **Frontend Developer**: [Your Name]
+- **Frontend Developer**: [Mintesnot Erstu]
 - **UI/UX Designer**: [Designer Name]
 - **Content Writer**: [Writer Name]
 
@@ -231,7 +231,7 @@ For support and questions:
 
 - **Email**: info@ethiopiantravel.com
 - **Phone**: +251 987 950 887
-- **Website**: https://ethiopiantravel.com
+- **Website**: https://tekleminteesnot2@gmail.com
 
 ## 🔮 Future Enhancements
 
