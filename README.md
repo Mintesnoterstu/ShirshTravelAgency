@@ -230,7 +230,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For support and questions:
 
 - **Email**: info@ethiopiantravel.com
-- **Phone**: +251 911 123 456
+- **Phone**: +251 987 950 887
 - **Website**: https://ethiopiantravel.com
 
 ## 🔮 Future Enhancements
