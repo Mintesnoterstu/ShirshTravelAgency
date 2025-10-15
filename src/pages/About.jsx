@@ -1,5 +1,5 @@
 import React from "react";
-import { BiBold } from "react-icons/bi";
+
 
 const About = () => {
   return (
