@@ -20,7 +20,7 @@ const DanakilDepressionDetails = () => {
     >
       <div
         style={{
-          background: `linear-gradient(rgba(255, 140, 0, 0.5), rgba(255, 215, 0, 0.5)), url('https://waltainfo.com/wp-content/uploads/2023/10/Dal9ol.webp')`,
+          background: `linear-gradient(rgba(255, 140, 0, 0.5), rgba(255, 215, 0, 0.5)), url('https://as2.ftcdn.net/jpg/03/35/02/63/1000_F_335026335_bSQm8Kw7t7d8m4PcJmXJWZCAung1LROm.webp')`,
           backgroundSize: "cover",
           backgroundPosition: "center center",
           backgroundRepeat: "no-repeat",
